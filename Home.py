@@ -14,7 +14,7 @@ with c_logo:
     if logo: st.image(logo, width=120)
 with c_title:
     st.markdown("# GAME MODEL")
-    st.markdown("<div style='font-family:Oswald,sans-serif;font-size:1em;letter-spacing:2px;'><span style='color:#FFFFFF;font-weight:700;'>DAVIE CURRIE</span> <span style='color:#89B4FF;'>·  NIAGARA FC OPDL  ·</span> <span style='color:#FFFFFF;font-weight:700;'>CONCACAF B LICENSE</span></div>", unsafe_allow_html=True)
+    st.markdown("<div style='font-family:Oswald,sans-serif;font-size:1em;letter-spacing:2px;'><span style='color:#FFFFFF;font-weight:700;'>DAVIE CURRIE</span> <span style='color:#89B4FF;'>·  NIAGARA FC OPDL  ·</span> <span style='color:#FFFFFF;font-weight:700;'>CONCACAF B DIPLOMA</span></div>", unsafe_allow_html=True)
     st.markdown("<div style='font-family:Oswald,sans-serif;font-size:1.1em;color:#1E56D6;letter-spacing:2px;'>INTENSITY · AGGRESSION · PURPOSE · FREEDOM WITHIN STRUCTURE</div>", unsafe_allow_html=True)
 
 st.markdown("<div class='quote-block'>\"The only expectation is to work hard and be all in. Development is the priority, but we still compete to win. We love players that hate to lose.\"</div>", unsafe_allow_html=True)
