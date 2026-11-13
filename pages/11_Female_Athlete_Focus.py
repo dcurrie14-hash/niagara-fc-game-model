@@ -1,166 +1,184 @@
+
 import streamlit as st
-import sys, os
+import sys
+import os
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils import apply_css, sidebar_brand, CYCLE_PHASES, NAVY
+from utils import apply_css, sidebar_brand, NAVY
 
 st.set_page_config(page_title="Female Athlete Focus | Niagara FC", page_icon="♀", layout="wide")
-apply_css(); sidebar_brand()
+apply_css()
+sidebar_brand()
+
+
+def cards(items, css_class="card", symbol="✔"):
+    for item in items:
+        st.markdown(f"<div class='{css_class}'>{symbol} {item}</div>", unsafe_allow_html=True)
+
 
 st.markdown("# FEMALE ATHLETE FOCUS")
-st.markdown("<div style='font-family:Oswald,sans-serif;font-size:1em;color:#4169E1;letter-spacing:2px;margin-bottom:16px;'>COACHING THE COMPLETE FEMALE ATHLETE</div>", unsafe_allow_html=True)
+st.markdown("<div style='font-family:Oswald,sans-serif;font-size:1em;color:#4169E1;letter-spacing:2px;margin-bottom:16px;'>COACHING THE COMPLETE FEMALE FOOTBALLER</div>", unsafe_allow_html=True)
 
-tabs = st.tabs(["🧠 Coaching Philosophy","💬 Communication","🏃 Physical Development","📊 Cycle Awareness"])
+st.markdown("""<div class='quote-block'>
+We aim to develop confident, capable, intelligent, and resilient female footballers. We combine high expectations with individual support, recognising that every athlete develops differently. Our approach challenges players to compete, take ownership of their development, and support the growth of those around them.
+</div>""", unsafe_allow_html=True)
 
-# ═══════════════════════════════════════════════════
-# TAB 1 — COACHING PHILOSOPHY
-# ═══════════════════════════════════════════════════
+tabs = st.tabs([
+    "🧠 Coaching Philosophy",
+    "💬 Communication & Wellbeing",
+    "🏃 Physical Development",
+    "📊 Menstrual Health",
+    "🥗 Fuel & Recovery",
+])
+
 with tabs[0]:
-    st.markdown("<div class='quote-block'>Effective coaching begins by understanding the individual athlete. Female footballers experience unique physiological, psychological, and social demands that influence development, but coaching decisions should always be based on the player in front of you — not assumptions.</div>", unsafe_allow_html=True)
-
     c1, c2 = st.columns(2)
     with c1:
         st.markdown("### COACHING PRINCIPLES")
-        for item in [
-            "Create a psychologically safe environment where players feel comfortable taking risks and making mistakes",
-            "Build confidence through competence, ownership, and success experiences",
-            "Provide high challenge with high support",
-            "Develop intrinsic motivation — players who love the game, not just the result",
-            "Use questioning and guided discovery to develop independent thinkers",
-            "Celebrate courage — reward the attempt, not only the outcome",
-            "Coach the athlete in front of you, not assumptions about gender",
-        ]:
-            st.markdown(f"<div class='card'>✔ {item}</div>", unsafe_allow_html=True)
+        cards([
+            "Psychological safety — players can ask questions, take risks, and learn from mistakes",
+            "High challenge, high support — demanding standards with the guidance needed to succeed",
+            "Confidence through competence — build belief through preparation, progress, and meaningful success",
+            "Player ownership — take responsibility for decisions, effort, and development",
+            "Competitive excellence — earn opportunities and raise the standards of teammates",
+            "Resilience — respond constructively to setbacks, feedback, and adversity",
+            "Guided discovery — ask questions that develop independent thinkers",
+        ])
     with c2:
         st.markdown("### DEVELOPMENT PRIORITIES")
-        for item, cls in [
-            ("Technical confidence — comfort on the ball under pressure","card"),
-            ("Tactical intelligence — recognise and solve problems independently","card"),
-            ("Physical capability — strength, speed, power, and resilience","card-orange"),
-            ("Psychological resilience — respond positively to mistakes and setbacks","card"),
-            ("Leadership — every player can influence the environment in different ways","card"),
-            ("Identity — pride in the collective, belief in herself","card-orange"),
-        ]:
-            st.markdown(f"<div class='{cls}' style='color:white !important;'>⚡ <span style='color:white;'>{item}</span></div>", unsafe_allow_html=True)
+        cards([
+            "Technical confidence — execute skills under pressure",
+            "Tactical intelligence — recognise problems and make effective decisions",
+            "Physical capability — strength, speed, power, and movement quality",
+            "Psychological resilience — manage setbacks and keep learning",
+            "Leadership — positively influence teammates and the environment",
+            "Identity and enjoyment — pride in the team and a lasting connection to football",
+        ], "card", "⚡")
+    st.markdown("<div class='quote-block'>We develop the footballer and the person. A supportive environment and a competitive environment are not opposites — players need both.</div>", unsafe_allow_html=True)
 
-# ═══════════════════════════════════════════════════
-# TAB 2 — COMMUNICATION
-# ═══════════════════════════════════════════════════
 with tabs[1]:
+    st.markdown("""<div class='quote-block'>Players deserve a voice in their development. Clear expectations, honest feedback, respectful relationships, and appropriate privacy help athletes communicate what they need while remaining accountable for their growth.</div>""", unsafe_allow_html=True)
     c1, c2 = st.columns(2)
     with c1:
-        st.markdown("#### ✅ Effective Behaviours")
-        for item in [
-            "Use questioning and guided discovery over direct instruction",
-            "Be consistent — players thrive when expectations are clear",
-            "Give specific, actionable feedback",
-            "Address behaviours rather than personalities",
-            "Address the group before the individual in difficult moments",
-            "Acknowledge effort, learning, and process",
-            "Use player names and build individual relationships",
-            "Check in regularly through informal conversations",
-            "Listen first when players communicate concerns",
-        ]:
-            st.markdown(f"<div class='card'>✔ {item}</div>", unsafe_allow_html=True)
+        st.markdown("### OUR COACHING COMMITMENTS")
+        cards([
+            "Listen without judgment when players raise concerns",
+            "Give clear, specific feedback about actions and decisions — not personalities",
+            "Explain expectations and help players understand the reasons behind training",
+            "Challenge every player while recognising individual circumstances",
+            "Discuss sensitive health and wellbeing concerns privately and appropriately",
+            "Never require athletes to share menstrual information or other private health details to justify playing time",
+        ], "card card-blue")
     with c2:
-        st.markdown("#### ❌ Behaviours to Avoid")
-        for item in [
-            "Public criticism or embarrassment",
-            "Comparing players negatively",
-            "Focusing only on mistakes",
-            "Sarcasm that damages trust",
-            "Dismissing emotional responses",
-            "Making assumptions about confidence, motivation, or commitment",
-        ]:
-            st.markdown(f"<div class='card card-red'>✗ {item}</div>", unsafe_allow_html=True)
+        st.markdown("### PLAYER OWNERSHIP")
+        cards([
+            "Communicate honestly about readiness, discomfort, or concerns",
+            "Ask questions and seek support when needed",
+            "Respond to feedback and take responsibility for improvement",
+            "Respect teammates' experiences and privacy",
+            "Build healthy habits around preparation, recovery, and wellbeing",
+            "Understand that support and accountability can exist together",
+        ], "card card-gold")
+    st.markdown("""<div class='quote-block'>Personal health information should be handled discreetly, with safeguarding and medical support when appropriate. Privacy is respected, while recognising that serious safety concerns may need to be shared with the appropriate people.</div>""", unsafe_allow_html=True)
 
-    st.markdown("""<div class='quote-block' style='margin-top:1rem;'>
-    Female athletes are not a homogeneous group. Strong coaching relationships are built through communication, trust,
-    and understanding the individual needs of each player.
-    </div>""", unsafe_allow_html=True)
 
-# ═══════════════════════════════════════════════════
-# TAB 3 — PHYSICAL DEVELOPMENT
-# ═══════════════════════════════════════════════════
 with tabs[2]:
+    st.markdown("""<div class='quote-block'>Female footballers should not be protected from physical challenge; they should be prepared for it. Well-designed, progressive training develops performance and helps reduce avoidable injury risk.</div>""", unsafe_allow_html=True)
     c1, c2 = st.columns(2)
     with c1:
-        st.markdown("#### ⚠️ Injury Prevention")
-        for item in [
-            "ACL injury risk is 3–6× higher in female athletes — warm-up is non-negotiable",
-            "FIFA 11+ or similar prevention warm-up every session",
-            "Emphasise landing mechanics, change of direction, and knee alignment",
-            "Strengthen hip abductors and glutes — they protect the knee joint",
-            "Joint laxity increases around ovulation — monitor individual response",
-        ]:
-            st.markdown(f"<div class='card card-red'>⚠️ {item}</div>", unsafe_allow_html=True)
+        st.markdown("### BUILDING PERFORMANCE")
+        cards([
+            "Strength — develop the capacity to sprint, jump, shield, and compete in duels",
+            "Speed — practise acceleration, sprint mechanics, and efficient deceleration",
+            "Power — progressively develop jumping, landing, and explosive movement",
+            "Movement quality — practise balance, cutting, coordination, and change of direction",
+            "Individual progression — consider growth, maturation, experience, and readiness",
+        ])
     with c2:
-        st.markdown("#### 💪 Developing Powerful Female Footballers")
-        for item in [
-            "Strength training is a performance tool, not just an injury-prevention strategy",
-            "Build strength foundations through squatting, lunging, hinging, pushing, and pulling",
-            "Develop speed through acceleration, deceleration, and sprint mechanics",
-            "Train power through jumping, landing, and change-of-direction activities",
-            "Recovery is part of performance — sleep, nutrition, hydration, and stress management matter",
-            "High standards and high support should exist together",
-        ]:
-            st.markdown(f"<div class='card'>💪 {item}</div>", unsafe_allow_html=True)
+        st.markdown("### REDUCING INJURY RISK")
+        cards([
+            "Female footballers have an elevated ACL injury risk in many comparable playing settings",
+            "Use a consistent, structured neuromuscular warm-up, such as FIFA 11+ or an age-appropriate equivalent",
+            "Include strength, balance, landing, deceleration, and change-of-direction training",
+            "Progress training demands appropriately and respond to fatigue, pain, and recovery needs",
+            "Injury prevention is a consistent team practice, not something reserved for players with symptoms",
+        ], "card card-blue", "✓")
+    st.markdown("""<div class='quote-block'>Our goal is to develop strong, powerful, adaptable footballers. Strength training is a performance tool as well as one part of injury-risk reduction.</div>""", unsafe_allow_html=True)
 
-    st.markdown("""<div class='quote-block' style='margin-top:1rem;'>
-    Female athletes should not be protected from challenge. They should be prepared for it through appropriate
-    physical development and progressive exposure to training demands.
-    </div>""", unsafe_allow_html=True)
-
-# ═══════════════════════════════════════════════════
-# TAB 4 — CYCLE AWARENESS
-# ═══════════════════════════════════════════════════
 with tabs[3]:
-    st.markdown("### MENSTRUAL CYCLE & PERFORMANCE")
-    st.markdown("""<div class='quote-block'>
-    Understanding the menstrual cycle helps us support players, manage training load, and reduce injury risk.
-    Individual responses vary significantly, and the athlete's experience always takes priority over predicted phase responses.
-    Training adapts to the player — not the other way around.
-    </div>""", unsafe_allow_html=True)
+    st.markdown("### MENSTRUAL HEALTH & PERFORMANCE")
+    st.markdown("""<div class='quote-block'>The menstrual cycle is a normal part of health and development. Experiences vary between players and from month to month. A predicted cycle phase does not reliably tell us how an athlete will perform or what training intensity she should complete. We listen to the individual and respond to symptoms, readiness, and wellbeing.</div>""", unsafe_allow_html=True)
 
-    ph_cols = st.columns(4)
-    for col, (ph, data) in zip(ph_cols, CYCLE_PHASES.items()):
+    phases = [
+        ("Menstrual", "Period begins", "#5B9CF5", "Some players experience cramps, fatigue, or discomfort. Others train and compete normally."),
+        ("Follicular", "Before ovulation", "#5CCF91", "Hormone levels change through this phase. Energy and performance responses vary between individuals."),
+        ("Ovulation", "Timing varies", "#F7C64B", "Ovulation is a normal hormonal event, not a reliable predictor of peak performance or injury risk."),
+        ("Luteal", "After ovulation", "#FB9562", "Some players notice changes in mood, sleep, energy, or physical comfort; others notice little change."),
+    ]
+    cols = st.columns(4)
+    for col, (name, timing, colour, description) in zip(cols, phases):
         with col:
-            label = ph.split("(")[0].strip()
-            days  = "(" + ph.split("(")[1] if "(" in ph else ""
-            intensity = data['intensity']
-            if ph.startswith("🟡"):
-                intensity = "High (monitor individual response)"
-            if ph.startswith("🟡") and "Peak" in data['focus']:
-                focus_display = "Peak — coordination and power may be highest"
-            else:
-                focus_display = data['energy']
-            st.markdown(f"<div style='background:{NAVY};border-top:4px solid {data['color']};border-radius:6px;padding:12px;height:100%;'><div style='font-family:Oswald,sans-serif;font-size:0.9em;font-weight:700;color:{data['color']};margin-bottom:8px;'>{label}<br><span style='font-size:0.8em;opacity:0.8;'>{days}</span></div><div style='font-size:0.8em;color:#ccc;margin-bottom:6px;'>⚡ {focus_display}</div><div style='font-size:0.8em;color:white;font-weight:600;margin-bottom:6px;'>{data['focus']}</div><div style='font-size:0.75em;color:#aaa;'>Intensity: {intensity}</div></div>", unsafe_allow_html=True)
-
+            st.markdown(f"""<div style='background:{NAVY};border-top:4px solid {colour};border-radius:6px;padding:14px;min-height:205px;'>
+            <div style='font-family:Oswald,sans-serif;font-weight:700;color:{colour};font-size:1.1em;'>{name}</div>
+            <div style='color:#c5d1df;font-size:0.8em;margin:6px 0 12px;'>{timing}</div>
+            <div style='color:white;font-size:0.88em;line-height:1.55;'>{description}</div>
+            </div>""", unsafe_allow_html=True)
+    st.caption("This is a simplified educational overview. Cycle length and phase timing vary, particularly during adolescence; hormonal contraception can also change cycle patterns.")
     st.divider()
-    st.markdown("#### Coach-Athlete Communication")
-    for item in [
-        "Normalise the conversation — create an environment where athletes can speak openly",
-        "Never make assumptions — some athletes have irregular cycles or hormonal conditions",
-        "A simple weekly check-in ('How's your energy this week?') goes a long way",
-        "Encourage athletes to track their cycle — awareness is the first step",
-        "Adjust training loads and communication style based on what athletes tell you",
-        "Respect privacy — individual conversations, not group discussions",
-    ]:
-        st.markdown(f"<div class='card card-blue'>♀ {item}</div>", unsafe_allow_html=True)
+    c1, c2 = st.columns(2)
+    with c1:
+        st.markdown("### OUR APPROACH")
+        cards([
+            "Ask about overall wellness and readiness without making assumptions",
+            "Respond to significant symptoms and individual training needs",
+            "Keep menstrual conversations private, respectful, and optional",
+            "Never require cycle tracking or disclosure as a condition of participation or selection",
+        ], "card card-blue")
+    with c2:
+        st.markdown("### WHAT PLAYERS SHOULD KNOW")
+        cards([
+            "Your experience may differ from teammates' experiences",
+            "Tracking personal patterns is optional and should remain under your control",
+            "Severe pain, persistent symptoms, or absent or very irregular periods deserve medical advice",
+            "You can seek support without discussing personal details with the whole team",
+        ], "card card-gold")
+    st.markdown("""<div class='quote-block'>Coach the athlete in front of you. Research informs our decisions, but never replaces listening to the individual.</div>""", unsafe_allow_html=True)
 
-    st.divider()
-    st.markdown("#### Athlete Ownership")
-    for item in [
-        "Players are encouraged to understand their own bodies and performance patterns",
-        "Wellness conversations are collaborative rather than coach-directed",
-        "Players are educated about recovery, readiness, and training load",
-        "Communication is always optional, confidential, and player-led",
-        "Individual experience is more important than textbook expectations",
-    ]:
-        st.markdown(f"<div class='card card-gold'>♀ {item}</div>", unsafe_allow_html=True)
 
-    st.divider()
-    st.markdown("""<div class='quote-block'>
-    Every player develops differently. Our role is not to coach female footballers as a group, but to coach each athlete
-    as an individual while understanding the demands unique to the female game.<br><br>
-    <strong>Coach the athlete in front of you. Use research to inform your decisions, but never let it replace the individual.</strong>
-    </div>""", unsafe_allow_html=True)
+with tabs[4]:
+    st.markdown("""<div class='quote-block'>Athletes need enough energy to support football, recovery, and healthy growth. Fuel, hydration, sleep, and rest are essential parts of development — not optional extras.</div>""", unsafe_allow_html=True)
+    c1, c2 = st.columns(2)
+    with c1:
+        st.markdown("### FUEL TO PERFORM")
+        cards([
+            "Eat enough to support both training demands and ongoing growth",
+            "Regular meals and snacks help provide energy across the day",
+            "Carbohydrates support football activity; protein supports growth and recovery",
+            "Hydration matters before, during, and after training",
+            "Focus on health, strength, and performance — not weight or appearance",
+        ])
+    with c2:
+        st.markdown("### RECOVER TO DEVELOP")
+        cards([
+            "Prioritise sufficient sleep and consistent sleep routines",
+            "Balance demanding sessions with appropriate recovery",
+            "Recognise that school, stress, illness, and other commitments affect readiness",
+            "Persistent fatigue, repeated injuries, or menstrual changes can signal a need for health support",
+            "Low energy availability can affect health and performance; seek qualified medical or sports nutrition guidance for concerns",
+        ], "card card-blue")
+    st.markdown("""<div class='quote-block'>Coaches encourage healthy habits and recognise concerns; they do not diagnose medical conditions or prescribe restrictive diets.</div>""", unsafe_allow_html=True)
+
+st.divider()
+st.markdown("### OUR COMMITMENT TO PLAYERS & FAMILIES")
+st.markdown("""<div class='quote-block'>We challenge our players to meet high standards while recognising their individual developmental needs. We aim to create an environment where female footballers feel informed, respected, supported, and empowered to take ownership of their development.</div>""", unsafe_allow_html=True)
+
+with st.expander("📚 Research & Further Reading"):
+    st.markdown("""
+- [IOC consensus statement on Relative Energy Deficiency in Sport (REDs), 2023](https://bjsm.bmj.com/content/57/17/1073)
+- [Systematic review: injury prevention in female football](https://pubmed.ncbi.nlm.nih.gov/32253193/)
+- [FIFA 11+ injury prevention resources](https://www.fifamedicalnetwork.com/)
+
+These resources provide background information; individual health concerns should be discussed with qualified professionals.
+""")
+
+
