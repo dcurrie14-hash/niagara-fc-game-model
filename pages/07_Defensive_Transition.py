@@ -12,7 +12,15 @@ st.markdown("<div style='font-family:Oswald,sans-serif;font-size:1em;color:#E539
 
 st.markdown("<div style='font-family:Oswald,sans-serif;font-size:0.95em;color:#FFD700;letter-spacing:1px;margin-bottom:12px;'>STRATEGY: Win it back immediately if possible. If not, protect the middle and recover into shape.</div>", unsafe_allow_html=True)
 
-fig = fig_def_transition(); st.pyplot(fig, use_container_width=True); plt.close()
+
+# New defensive transition tactical diagram
+img = get_img("def_transition_new.png")
+
+if img:
+    st.image(img, use_container_width=True)
+else:
+    st.warning("Defensive transition diagram not found.")
+
 
 c1, c2 = st.columns(2)
 with c1:
