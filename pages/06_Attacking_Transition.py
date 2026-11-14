@@ -12,7 +12,15 @@ st.markdown("<div style='font-family:Oswald,sans-serif;font-size:1em;color:#F5C5
 
 st.markdown("<div style='font-family:Oswald,sans-serif;font-size:0.95em;color:#FFD700;letter-spacing:1px;margin-bottom:12px;'>STRATEGY: Attack immediately. Play forward before the opposition can recover organisation.</div>", unsafe_allow_html=True)
 
-fig = fig_att_transition(); st.pyplot(fig, use_container_width=True); plt.close()
+
+# New attacking transition diagram
+img = get_img("att_transition_new.png")
+
+if img:
+    st.image(img, use_container_width=True)
+else:
+    st.warning("Attacking Transition diagram not found.")
+
 
 c1, c2 = st.columns(2)
 with c1:
