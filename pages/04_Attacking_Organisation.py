@@ -432,7 +432,7 @@ with tabs[3]:
         "Women's World Cup 2023 — finishing locations, "
 "the second six-yard box and goals assisted by crosses. "
 "Source: England Football Learning."
-
+    )
 
 
 # ==========================================================
