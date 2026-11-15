@@ -428,10 +428,10 @@ with tabs[3]:
     # against their original source before being presented
     # as established findings.
     show_diagram(
-        "womens_goals_scored.png",
-        "Women's football goal analysis — an additional "
-        "reference for discussing finishing situations."
-    )
+    "ao_zone4_finishing_insights.png",
+        "Women's World Cup 2023 — finishing locations, "
+"the second six-yard box and goals assisted by crosses. "
+"Source: England Football Learning."
 
 
 
