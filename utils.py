@@ -176,85 +176,398 @@ FORMATIONS = {
         }
     },
 }
+
 PROFILES = {
     "#1 — Goalkeeper": {
         "scores": [4.0, 4.5, 3.5, 4.5, 5.0],
-        "intro": "The goalkeeper is our extra outfield player. She does more than stop shots — she starts attacks, organises the defensive structure, and makes decisions under pressure that influence the rhythm of the game. She must be brave in possession, decisive in her actions, and a constant leader for the team.",
+        "intro": (
+            "The goalkeeper is our extra outfield player and the starting point "
+            "of our attacking organisation. She protects the goal, supports "
+            "possession, manages the space behind the defensive line and "
+            "organises teammates. She must be brave, composed and decisive, "
+            "recognising when to build, play forward or relieve pressure."
+        ),
         "attrs": {
-            "Technical":           ["Distributes accurately with both feet over short and long distances","Comfortable receiving under pressure and playing out from the back","Demonstrates strong shot-stopping technique through positioning, footwork, and reactions","Commands the 6-yard box by claiming crosses and set pieces decisively","Supports possession as an additional outfield player in build-up","Plays forward whenever opportunities arise"],
-            "Tactical":            ["Reads the game early and anticipates danger before it develops","Recognises when to sweep, when to hold position, and when to engage","Organises and communicates with the defensive unit constantly","Creates passing angles and numerical superiority during build-up","Supports possession and helps the team play through pressure","Releases possession quickly in transition and recognises opportunities to play forward"],
-            "Physical":            ["Explosive over short distances to attack loose balls and through passes","Strong and commanding in aerial situations","Agile and coordinated in and around the penalty area","Maintains concentration and consistency throughout the match","Recovers quickly between actions"],
-            "Mental & Social":     ["Commands the penalty area with confidence and authority","Communicates constantly before, during, and after every action","Demonstrates resilience and responds positively to mistakes","Makes composed decisions under pressure","Leads the team through actions, communication, and presence","Takes responsibility during key moments of the game"],
-            "NFC Non-Negotiables": ["Play out from the back with confidence and purpose","Be brave in possession and support the build-up","Looks to play forward immediately on winning the ball — longest pass first, shortest pass last","Communicate constantly and organise the defensive unit","Attack crosses and set pieces decisively","Lead through actions, communication, and presence"],
+            "Technical": [
+                "Receives and controls the ball with a first touch that prepares the next action",
+                "Distributes accurately with both feet over short, medium and long distances",
+                "Uses appropriate passing technique to break lines, switch play or find a forward",
+                "Demonstrates effective handling, footwork and shot-stopping technique",
+                "Claims, punches or redirects crosses using appropriate technique",
+                "Executes quick and accurate distribution after regaining possession"
+            ],
+            "Tactical": [
+                "Creates passing angles and supports numerical superiority during build-up",
+                "Recognises when to play through pressure, switch play or use a longer forward pass",
+                "Adjusts starting position to manage space behind the defensive line",
+                "Recognises when to sweep, hold position or engage an attacker",
+                "Anticipates crosses, through balls and second-ball situations",
+                "Identifies opportunities to initiate attacking transitions before opponents recover",
+                "Organises defensive positioning and responds to changes in the opposition's shape"
+            ],
+            "Physical": [
+                "Explosive over short distances when attacking loose balls or closing down attackers",
+                "Agile and coordinated when changing direction and making saves",
+                "Develops the jumping ability and strength needed for aerial challenges",
+                "Recovers quickly between repeated goalkeeping actions",
+                "Maintains physical readiness throughout the match"
+            ],
+            "Mental & Social": [
+                "Remains composed and makes clear decisions under pressure",
+                "Responds positively to mistakes and prepares for the next action",
+                "Communicates early, clearly and consistently",
+                "Demonstrates courage in possession and in defensive situations",
+                "Maintains concentration during extended periods without involvement",
+                "Takes responsibility and leads through actions and communication"
+            ],
+            "NFC Non-Negotiables": [
+                "Be available to support possession and offer a passing option",
+                "Recognise the forward option first; choose the pass that best progresses the attack",
+                "Be brave and purposeful when playing out under pressure",
+                "Manage the space behind the defensive line and act decisively",
+                "Communicate early and organise the defensive unit",
+                "React immediately to changes of possession and prepare the next action"
+            ]
         }
     },
+
     "#2 & #3 — Fullbacks": {
         "scores": [3.5, 4.5, 4.5, 4.0, 4.5],
-        "intro": "Fullbacks are key to everything we do. They provide width, support the attack, and transition quickly between defensive and attacking responsibilities. They must read the game and know when to go and when to hold.",
+        "intro": (
+            "Fullbacks connect our defensive and attacking organisation. "
+            "They provide width when required, support combinations and "
+            "recognise opportunities to overlap or underlap. They must "
+            "understand when to advance, when to support underneath and "
+            "when to remain in a position of defensive balance."
+        ),
         "attrs": {
-            "Technical":           ["Quality delivery from wide areas — crosses and cutbacks","Comfortable in 1v1 defending situations","Can combine short with central players and overlap effectively","Good first touch under pressure","Passes accurately — both short combinations and switches of play"],
-            "Tactical":            ["Reads when to push forward and when to hold defensively","Understands width — provides the widest passing option at the right moment","Underlaps intelligently when the wide forward has the outside","Recovers quickly and gets behind the ball on defensive transition","Understands when to get compact and connect with the centre backs in defensive moments","Aware of the space behind them — never caught flat-footed"],
-            "Physical":            ["High engine — covers ground going forward and recovering","Pace to get in behind and recover 1v1","Strong enough to defend physically in wide areas","Endurance to maintain quality for 90 minutes"],
-            "Mental & Social":     ["Disciplined — knows when NOT to go forward","Communicates with the wide forward, central midfielder, and centre backs constantly","Competitive — loves the 1v1 battle","Resilient on transition — never switches off"],
-            "NFC Non-Negotiables": ["Provide width OR underlap intelligently — read the moment","Support attacks with purpose","Recover immediately on loss of possession","Get compact and connect with the centre backs in defensive moments","Communicate constantly with wide forwards, midfielders, and centre backs"],
+            "Technical": [
+                "Receives with a positive first touch that creates time or space",
+                "Passes accurately in short combinations and across longer distances",
+                "Delivers quality crosses and cutbacks from wide attacking areas",
+                "Combines effectively using one-touch and two-touch passing",
+                "Defends 1v1 situations with controlled footwork and appropriate tackling technique",
+                "Protects possession and plays effectively when pressured near the touchline"
+            ],
+            "Tactical": [
+                "Recognises the wide forward's position to decide whether to overlap, underlap or support underneath",
+                "Provides width when needed without occupying the same space as a teammate",
+                "Recognises when to advance and when to maintain defensive balance",
+                "Supports forward passing options and creates useful passing angles",
+                "Anticipates space behind the defensive line when the team attacks",
+                "Recovers quickly and protects dangerous spaces during defensive transition",
+                "Moves centrally to connect with centre backs when the team defends",
+                "Recognises when to press the wide player and when to delay or protect space"
+            ],
+            "Physical": [
+                "Repeatedly performs high-intensity attacking and defensive runs",
+                "Develops acceleration and recovery speed over short and medium distances",
+                "Competes effectively in physical duels in wide areas",
+                "Changes direction quickly when defending or supporting combinations",
+                "Maintains the physical capacity to repeat quality actions throughout the match"
+            ],
+            "Mental & Social": [
+                "Demonstrates discipline when deciding whether to advance or hold",
+                "Communicates consistently with the wide forward, midfielders and centre backs",
+                "Competes confidently in 1v1 defensive situations",
+                "Responds immediately when possession changes",
+                "Shows resilience after being beaten or making a mistake"
+            ],
+            "NFC Non-Negotiables": [
+                "Recognise when to provide width, overlap, underlap or support underneath",
+                "Advance with purpose while maintaining awareness of defensive balance",
+                "React immediately on losing possession and recover towards dangerous space",
+                "Stay connected to the centre backs and protect central areas when defending",
+                "Compete in wide defensive duels and prevent easy penetration",
+                "Communicate and coordinate movements with nearby teammates"
+            ]
         }
     },
+
     "#4 & #5 — Centre Backs": {
         "scores": [4.0, 4.5, 4.5, 4.5, 5.0],
-        "intro": "Centre backs are more than defenders in our system — they are the foundation of our build-up play and the leaders of our defensive structure. They must be comfortable in possession, aggressive without the ball, and intelligent enough to anticipate the game before it unfolds.",
+        "intro": (
+            "Centre backs provide the foundation of our defensive structure "
+            "and attacking build-up. They must be confident progressing the "
+            "ball, aggressive when defending and intelligent in managing "
+            "space, depth and cover. They lead the defensive unit through "
+            "their positioning, decisions and communication."
+        ),
         "attrs": {
-            "Technical":           ["Comfortable receiving and playing under pressure","Plays forward whenever possible to break lines and progress attacks","Accurate long passing to switch play or find attacking players directly","Strong in aerial duels and attacks the ball aggressively","Reads the flight of the ball well and intercepts rather than reacts","Defends 1v1 situations with composure and patience"],
-            "Tactical":            ["Splits wide in build-up to create passing lanes for the goalkeeper","Recognises when to step into pressure and when to hold the defensive line","Aggressively presses when team triggers are activated","Protects central spaces and denies penetration through the middle","Maintains connection with defensive partners and midfielders","Aware of runners in behind and manages depth effectively","Organises the defensive line and ensures team compactness"],
-            "Physical":            ["Strong and dominant in aerial duels","Pace to recover and defend space behind the line","Physical presence to compete in duels and protect the penalty area","Endurance and concentration to perform consistently throughout the match"],
-            "Mental & Social":     ["Calm and composed under pressure","Communicates constantly and organises teammates","Aggressive defensive mentality and takes pride in defending","Demonstrates leadership through actions and standards","Resilient and focused regardless of game circumstances"],
-            "NFC Non-Negotiables": ["Split wide in build-up to support the goalkeeper","Play forward whenever the opportunity is on","Protect central spaces first — force play wide","Press aggressively when triggers are activated","Communicate constantly and organise the defensive unit","Win first balls and compete for every second ball"],
+            "Technical": [
+                "Receives and passes confidently under pressure",
+                "Plays accurate forward passes that break lines and find teammates between lines",
+                "Switches play or finds forward runners with appropriate longer passes",
+                "Uses effective first-touch and ball-carrying technique to escape pressure",
+                "Competes strongly in aerial challenges and defensive duels",
+                "Demonstrates controlled tackling, blocking and interception technique"
+            ],
+            "Tactical": [
+                "Creates useful passing angles with the goalkeeper and defensive partners",
+                "Recognises opportunities to carry forward or pass through opposition lines",
+                "Identifies when to step into midfield and when to maintain the defensive line",
+                "Protects central spaces and directs opponents away from dangerous areas",
+                "Manages defensive depth and anticipates runs behind a higher line",
+                "Maintains cover and balance when a defensive teammate presses",
+                "Recognises pressing triggers and coordinates pressure with nearby players",
+                "Adjusts positioning in response to the ball, opponents and teammates",
+                "Organises the defensive line during open play and defensive transitions"
+            ],
+            "Physical": [
+                "Competes strongly in aerial and ground duels",
+                "Develops acceleration and recovery speed to defend space behind",
+                "Uses strength and balance effectively when protecting the penalty area",
+                "Changes direction efficiently when responding to attacking movement",
+                "Maintains physical readiness and repeat-action quality throughout the match"
+            ],
+            "Mental & Social": [
+                "Remains calm and composed when building under pressure",
+                "Communicates clearly and organises teammates",
+                "Takes pride in defending and competing for the ball",
+                "Shows courage when stepping forward or defending isolated situations",
+                "Responds positively to setbacks and maintains concentration",
+                "Leads through consistent standards and responsible decisions"
+            ],
+            "NFC Non-Negotiables": [
+                "Be available in build-up and look to progress the ball forward",
+                "Protect central spaces and prevent easy penetration",
+                "Step forward decisively when the pressing opportunity is on",
+                "Provide cover and manage space behind teammates who press",
+                "Stay connected to the defensive unit and communicate constantly",
+                "Compete aggressively for first balls and react to second balls"
+            ]
         }
     },
+
     "#6 — Defensive Midfielder": {
         "scores": [4.0, 5.0, 4.0, 5.0, 5.0],
-        "intro": "The #6 is the connector between defence and attack. She provides balance, protects central spaces, and gives the team stability both in and out of possession. The #6 must be intelligent, disciplined, and reliable — often doing the unseen work that allows others around her to succeed.",
+        "intro": (
+            "The #6 connects defence and attack while providing balance "
+            "and protecting central spaces. She must recognise when to "
+            "offer a forward passing option, when to support underneath "
+            "and when to remain behind the ball. Her positional "
+            "intelligence allows teammates to attack and press with confidence."
+        ),
         "attrs": {
-            "Technical":           ["Receives comfortably under pressure and protects possession","Passes accurately over short and medium distances with both feet","Plays forward whenever opportunities arise","Carries the ball forward to break pressure when space opens","Wins second balls and anticipates loose possessions","Shields the ball effectively in congested areas"],
-            "Tactical":            ["Drops between the centre backs in build-up to create numerical superiority when required","Holds central positions and protects the space in front of the back line","Provides balance when teammates press or attack forward","Connects the back line to attacking midfielders and forwards","Reads the game early and positions herself before danger develops","Understands when to support attacks and when to remain behind the ball","Screens passing lanes and denies central penetration"],
-            "Physical":            ["Exceptional endurance and work rate","Strong in duels and tackles without unnecessary fouls","Quick over short distances to close space and press","Physically competitive and capable of protecting the back four","Maintains concentration and intensity throughout the match"],
-            "Mental & Social":     ["Calm and composed under pressure","Disciplined and patient in possession","Communicates constantly and organises players around her","Demonstrates high football intelligence and awareness","Makes simple decisions quickly and consistently","Takes responsibility during difficult moments in the game"],
-            "NFC Non-Negotiables": ["Hold central positions — central spaces are never left unprotected","Screen and protect the back four at all times","Drop between the centre backs when required in build-up","If stepping forward to press, ensure cover is provided immediately","Play forward whenever the opportunity is on","Communicate constantly and organise teammates around you"],
+            "Technical": [
+                "Receives under pressure with an open body shape and effective first touch",
+                "Passes accurately over short and medium distances with either foot",
+                "Executes forward passes that break lines and connect attacking players",
+                "Protects possession and uses appropriate turns to escape pressure",
+                "Carries the ball forward when space is available",
+                "Uses controlled tackling and interception technique to regain possession"
+            ],
+            "Tactical": [
+                "Provides passing angles between the defensive and attacking lines",
+                "Recognises when to remain central, drop deeper or move to create a passing lane",
+                "Identifies forward options before receiving the ball",
+                "Maintains defensive balance when teammates advance",
+                "Screens central passing lanes and protects space in front of the centre backs",
+                "Recognises when to step forward to press and when to hold or provide cover",
+                "Adjusts positioning to the team's pressing or mid-block structure",
+                "Anticipates second balls and positions to regain possession",
+                "Supports attacking transitions without leaving central spaces unnecessarily exposed"
+            ],
+            "Physical": [
+                "Covers ground efficiently to support both attacking and defensive actions",
+                "Accelerates quickly to close space and compete for loose balls",
+                "Competes effectively in midfield duels",
+                "Demonstrates balance and strength when protecting possession",
+                "Repeats high-quality actions throughout the match"
+            ],
+            "Mental & Social": [
+                "Remains composed when receiving in congested areas",
+                "Demonstrates patience and discipline in positional decisions",
+                "Communicates and helps organise teammates around the ball",
+                "Anticipates situations and takes responsibility before danger develops",
+                "Makes clear decisions quickly under pressure",
+                "Responds positively to mistakes and maintains focus"
+            ],
+            "NFC Non-Negotiables": [
+                "Be available to connect the defensive and attacking units",
+                "Look forward before receiving and progress the ball when possible",
+                "Protect central spaces and maintain defensive balance",
+                "Recognise when to press and ensure space behind is covered",
+                "Anticipate and compete for second balls",
+                "Communicate and organise teammates in possession and out of possession"
+            ]
         }
     },
+
     "#8 & #10 — Central Midfielders": {
         "scores": [4.5, 4.5, 4.5, 4.0, 4.5],
-        "intro": "The #8 and #10 are the connectors between defence and attack. They support underneath and beyond the striker, create and finish chances, and contribute aggressively in both attacking and defensive moments. They must combine creativity, work rate, and tactical intelligence to impact the game at both ends of the field.",
+        "intro": (
+            "Our #8 and #10 connect midfield to attack, create forward "
+            "options and influence the game between opposition lines. "
+            "They must recognise when to support underneath, receive "
+            "between lines, run beyond the forwards or arrive in scoring "
+            "positions. Their roles may differ within the formation, "
+            "but both require creativity, intelligence and defensive responsibility."
+        ),
         "attrs": {
-            "Technical":           ["Comfortable receiving in tight spaces and playing forward quickly","Quality passing — penetrates lines and creates attacking opportunities","Receives on the half-turn and plays forward under pressure","Arrives late into the box and finishes from midfield positions","Combines effectively through short passing, third-player combinations, and switches of play","Carries the ball forward to eliminate pressure and create overloads"],
-            "Tactical":            ["Connects underneath and beyond the #9 to create forward options","Finds pockets of space between opposition midfield and defensive lines","Reads when to support possession and when to attack space","Arrives late into the box with well-timed runs","Supports wide players through combination play and overloads","Understands pressing triggers and reacts aggressively when activated","Tracks runners and recovers quickly during defensive transitions","Positions effectively to compete for second balls and loose possessions"],
-            "Physical":            ["Box-to-box engine with a high work rate in both directions","Explosive over short distances to arrive into key spaces","Strong enough to compete physically in midfield battles","Maintains intensity and quality throughout the match","Covers large distances repeatedly without a drop in performance"],
-            "Mental & Social":     ["Hungry — wants to score, create, and influence the game","Competitive — fights for every second ball and loose possession","Communicates constantly and connects teammates around them","Disciplined — understands when to support and when to attack","Courageous in possession and willing to play forward under pressure","Resilient and consistent throughout the game"],
-            "NFC Non-Negotiables": ["Connect underneath and beyond the #9","Arrive late into the box with purpose","Press aggressively and react immediately on loss of possession","Fight for every second ball and loose ball","Play forward whenever opportunities arise","Work relentlessly in both directions"],
+            "Technical": [
+                "Receives on the half-turn and prepares to play forward",
+                "Controls and protects the ball in tight spaces under pressure",
+                "Executes penetrating passes and combinations through opposition lines",
+                "Uses one-touch passing, wall passes and third-player combinations",
+                "Carries the ball forward to eliminate opponents or create advantages",
+                "Finishes effectively from central areas and late runs into the penalty area",
+                "Uses accurate passing and appropriate weight of delivery to create chances"
+            ],
+            "Tactical": [
+                "Recognises pockets of space between opposition midfield and defensive lines",
+                "Provides passing options underneath, alongside or beyond the #9",
+                "Identifies when to receive to feet and when to run beyond the defensive line",
+                "Recognises opportunities for third-player movements and combinations",
+                "Coordinates movements with wide forwards and the striker to avoid occupying the same space",
+                "Times forward runs to arrive in dangerous areas rather than standing in them",
+                "Understands when to maintain midfield balance and when to join the attack",
+                "Recognises pressing triggers and coordinates pressure with the forwards",
+                "Recovers quickly and tracks dangerous midfield runners during defensive transitions",
+                "Anticipates second balls and positions to regain possession"
+            ],
+            "Physical": [
+                "Repeatedly supports attacking and defensive actions",
+                "Accelerates into space and changes direction quickly",
+                "Competes effectively in midfield challenges",
+                "Develops the endurance to make repeated supporting and penetrating runs",
+                "Maintains physical intensity and quality throughout the match"
+            ],
+            "Mental & Social": [
+                "Shows courage and creativity when receiving under pressure",
+                "Demonstrates a desire to create and score goals",
+                "Makes decisions based on the movement of teammates and opponents",
+                "Communicates and connects players across midfield and attack",
+                "Competes for loose balls and reacts positively to setbacks",
+                "Balances attacking ambition with defensive responsibility"
+            ],
+            "NFC Non-Negotiables": [
+                "Create forward passing options between and beyond opposition lines",
+                "Look to play forward or combine to break lines whenever possible",
+                "Recognise when to support underneath and when to run beyond",
+                "Time movements into the penalty area to create scoring opportunities",
+                "Press together with teammates and react immediately when possession is lost",
+                "Compete for second balls and recover to protect central spaces"
+            ]
         }
     },
+
     "#7 & #11 — Wide Forwards": {
         "scores": [4.5, 3.5, 5.0, 4.0, 4.5],
-        "intro": "Wide forwards are our primary attacking weapons. They stretch the opposition, attack defenders aggressively, and create goals through direct play. They must be fearless in 1v1 situations, relentless in their work rate, and capable of both scoring and creating chances for teammates.",
+        "intro": (
+            "Wide forwards stretch and unbalance the opposition through "
+            "their positioning, movement and direct attacking play. "
+            "They must recognise when to stay wide, attack a defender, "
+            "combine with teammates or run into space behind. "
+            "They contribute goals and chances while remaining "
+            "committed to pressing and defensive recovery."
+        ),
         "attrs": {
-            "Technical":           ["Attacks 1v1 situations with confidence and purpose","Drives to the end line and delivers quality cutbacks","Delivers accurate crosses and cutbacks into dangerous areas","Finishes chances and contributes goals from wide positions","First touch prepares the next action and moves the attack forward","Combines effectively with fullbacks and central midfielders"],
-            "Tactical":            ["Provides width to stretch and unbalance the opposition","Recognises when to stay wide, drive inside, or attack space behind","Understands when to isolate defenders in 1v1 situations","Supports combination play with fullbacks and midfielders","Presses aggressively from the front and helps initiate defensive pressure","Tracks back and supports the fullback defensively when required","Prioritises cutbacks and ground deliveries in Zone 4"],
-            "Physical":            ["Pace to beat defenders and attack space behind","Explosive first step to create separation from opponents","Strength to protect the ball and drive through challenges","Endurance to attack, recover, and press repeatedly","Maintains intensity throughout the match"],
-            "Mental & Social":     ["Fearless and embraces 1v1 situations","Direct mindset — first thought is forward","Competitive and determined to influence the game","Resilient — responds positively to mistakes and setbacks","Courageous in possession and willing to take risks","Works hard for teammates in both attacking and defensive moments"],
-            "NFC Non-Negotiables": ["Provide width and stretch the opposition","Attack defenders and drive forward whenever opportunities arise","Prioritise cutbacks and ground deliveries in Zone 4","Press aggressively from the front","Recover and support the fullback when required","Be brave, direct, and relentless in attacking moments"],
+            "Technical": [
+                "Uses a positive first touch to attack space or prepare the next action",
+                "Dribbles confidently and effectively in 1v1 situations",
+                "Changes speed and direction to eliminate defenders",
+                "Delivers accurate crosses and cutbacks from dangerous wide areas",
+                "Finishes effectively from wide and central attacking positions",
+                "Combines through short passes, lay-offs and third-player actions",
+                "Protects possession when isolated or under pressure"
+            ],
+            "Tactical": [
+                "Recognises when to provide width and when to move inside",
+                "Identifies opportunities to isolate and attack defenders 1v1",
+                "Times runs behind the defensive line to exploit space",
+                "Coordinates movement with the fullback to create overlaps and underlaps",
+                "Recognises when to attack the penalty area as the opposite-side forward",
+                "Identifies opportunities to combine rather than force an individual action",
+                "Prioritises effective cutbacks and ground deliveries when appropriate in Zone 4",
+                "Recognises pressing triggers and coordinates pressure on opposition defenders",
+                "Recovers to support the fullback and protect wide spaces when required"
+            ],
+            "Physical": [
+                "Demonstrates acceleration and speed to attack defenders and space behind",
+                "Changes direction explosively to create separation",
+                "Uses strength and balance to protect the ball in wide areas",
+                "Repeats attacking runs, pressing actions and defensive recoveries",
+                "Maintains high-intensity contributions throughout the match"
+            ],
+            "Mental & Social": [
+                "Demonstrates courage and confidence in attacking 1v1 situations",
+                "Maintains a positive, forward-thinking attacking mentality",
+                "Shows resilience after losing possession or missing opportunities",
+                "Recognises when to be direct and when to involve teammates",
+                "Competes consistently in attacking and defensive moments",
+                "Takes responsibility for creating and finishing chances"
+            ],
+            "NFC Non-Negotiables": [
+                "Provide width or attack inside at the appropriate moment",
+                "Recognise opportunities to attack defenders and space behind",
+                "Play forward with purpose and support combinations when needed",
+                "Attack the penalty area when the ball is delivered from the opposite side",
+                "Press with teammates and react immediately when possession is lost",
+                "Recover and support the fullback when defensive balance requires it"
+            ]
         }
     },
+
     "#9 — Striker": {
         "scores": [4.0, 4.5, 4.5, 4.5, 5.0],
-        "intro": "The #9 is the focal point of our attack and the team's reference point in transition. She holds the ball under pressure, connects midfield to attack, initiates the press, and provides an outlet whenever the team needs relief. She must combine physical presence, intelligence, and relentless work rate to influence the game both with and without the ball.",
+        "intro": (
+            "The #9 provides a central attacking reference point, "
+            "connects teammates and threatens the opposition's defensive line. "
+            "She must recognise when to hold possession, combine, "
+            "run behind or attack the penalty area. Without the ball, "
+            "she helps initiate the press and sets the standard "
+            "for collective defensive effort."
+        ),
         "attrs": {
-            "Technical":           ["Holds the ball with her back to goal under physical pressure","Uses her first touch to secure possession and bring teammates into play","Finishes chances consistently and efficiently","Wins aerial duels and competes for long balls","Combines quickly through lay-offs, wall passes, and third-player actions","Protects possession while waiting for support to arrive"],
-            "Tactical":            ["Provides the first outlet in transition and on direct play","Connects midfield to attack through intelligent link play","Initiates the press and sets the tempo defensively","Recognises when to hold, when to run in behind, and when to check to the ball","Occupies and pins centre backs to create space for teammates","Creates opportunities for attacking midfielders to arrive underneath and beyond","Supports attacking transitions by securing contact until runners arrive"],
-            "Physical":            ["Strong enough to compete against physical defenders","Dominant in aerial duels and physical battles","Mobile enough to threaten space behind the defence","Endurance to press, hold, run, and compete throughout the match","Maintains intensity regardless of game circumstances"],
-            "Mental & Social":     ["Leads the press through actions and work rate","Resilient and embraces physical challenges","Selfless — creates opportunities for teammates as well as scoring goals","Competitive and determined to win every duel","Courageous when isolated and willing to battle for the team","Sets standards through effort and attitude"],
-            "NFC Non-Negotiables": ["Be the first outlet in transition and direct play","Hold the ball and connect midfield to attack","Initiate the press and set the defensive tempo","Secure contact and retain possession until support arrives","Occupy centre backs and create space for teammates","Compete relentlessly in every duel"],
+            "Technical": [
+                "Receives and protects the ball with defenders applying pressure",
+                "Uses an effective first touch when receiving with back to goal",
+                "Combines quickly through lay-offs, wall passes and third-player actions",
+                "Finishes effectively using different techniques and from varied situations",
+                "Competes for aerial balls and controls or redirects forward passes",
+                "Uses appropriate ball-striking technique to finish crosses and cutbacks",
+                "Secures possession long enough to bring supporting teammates into play"
+            ],
+            "Tactical": [
+                "Provides a central forward option during build-up and attacking transitions",
+                "Recognises when to check towards the ball and when to run behind",
+                "Occupies centre backs and creates space for attacking teammates",
+                "Connects midfielders and forwards through intelligent link play",
+                "Times movements to attack crosses, cutbacks and rebounds",
+                "Recognises when to secure possession and when to release runners quickly",
+                "Coordinates pressing actions and directs opponents towards team pressure",
+                "Anticipates second balls and attacking opportunities around the penalty area",
+                "Adjusts positioning to remain a forward threat without becoming isolated"
+            ],
+            "Physical": [
+                "Competes effectively against physical defenders",
+                "Develops acceleration to threaten space behind the defensive line",
+                "Uses strength and balance to protect possession",
+                "Competes confidently in aerial challenges",
+                "Repeats pressing actions, forward runs and attacking movements",
+                "Maintains physical intensity throughout the match"
+            ],
+            "Mental & Social": [
+                "Demonstrates confidence and composure in scoring situations",
+                "Competes willingly in physical challenges",
+                "Responds positively to missed chances and setbacks",
+                "Works selflessly to create opportunities for teammates",
+                "Communicates and coordinates movements with attacking players",
+                "Leads through effort, attitude and defensive commitment"
+            ],
+            "NFC Non-Negotiables": [
+                "Provide a central forward option and threaten space behind",
+                "Recognise when to secure possession, combine or release the ball forward",
+                "Attack the penalty area with purposeful movement",
+                "Occupy defenders and create space for supporting runners",
+                "Initiate and coordinate pressing actions with teammates",
+                "Compete for first and second balls and react immediately to transitions"
+            ]
         }
-    },
+    }
 }
+
 CYCLE_PHASES = {
     "🔵  Menstrual  (Days 1–5)": {
         "color":"#4472C4","bg":"#101d36",
