@@ -273,86 +273,220 @@ def sidebar_brand():
 # DATA
 # ══════════════════════════════════════════════════════════════════════════════
 
+
 FORMATIONS = {
     "1-4-3-3": {
-        "pos":[(5,40,"1"),(27,10,"2"),(24,28,"4"),(24,52,"5"),(27,70,"3"),
-               (50,22,"8"),(42,40,"6"),(53,58,"10"),(85,10,"7"),(90,40,"9"),(85,70,"11")],
-        "roles":{
+        "pos": [
+            (5, 40, "1"),
+            (27, 10, "2"),
+            (24, 28, "4"),
+            (24, 52, "5"),
+            (27, 70, "3"),
+            (50, 22, "8"),
+            (42, 40, "6"),
+            (53, 58, "10"),
+            (85, 10, "7"),
+            (90, 40, "9"),
+            (85, 70, "11")
+        ],
+
+        "roles": {
             "#1 — Goalkeeper":
-                "Ball-playing goalkeeper. Create numerical superiority during build-up, organise the defensive line, protect space behind the defence, and initiate attacks quickly with purposeful distribution.",
-            "#2 — Right Back":
-                "Recognise when to provide width and when to underlap. Support the winger to create overloads, attack forward when opportunities arise, and recover quickly to protect wide areas during transitions.",
-            "#3 — Left Back":
-                "Recognise when to provide width and when to underlap. Support the winger to create overloads, attack forward when opportunities arise, and recover quickly to protect wide areas during transitions.",
+                "Support build-up as an additional outfield player, "
+                "creating passing options and recognising opportunities "
+                "to progress forward. Organise the defensive line, "
+                "manage space behind the defence and initiate attacking "
+                "transitions with purposeful distribution.",
+
+            "#2 & #3 — Fullbacks":
+                "Recognise when to provide width, overlap, underlap "
+                "or support underneath. Combine with midfielders and "
+                "wide forwards to progress the attack, while maintaining "
+                "defensive balance and recovering quickly to protect "
+                "wide and central spaces.",
+
             "#4 & #5 — Centre Backs":
-                "Ball-playing defenders. Build from inside the box, step forward with the ball whenever possible to create numerical superiority, protect central spaces, organise the defensive line, and break lines with forward passes.",
+                "Initiate attacking build-up, recognise opportunities "
+                "to carry forward and break lines through passing. "
+                "Protect central spaces, manage defensive depth, "
+                "provide cover and organise the defensive unit.",
+
             "#6 — Defensive Midfielder":
-                "Connect the team in possession by creating passing angles and supporting underneath the ball. Protect central spaces, screen the defensive line, and provide balance during attacking and defensive transitions.",
-            "#8 — Box-to-Box Midfielder":
-                "Connect underneath and beyond the #9. Arrive late into attacking areas, create overloads around the ball, support combination play, and contribute immediately during transitions.",
+                "Connect defence and attack by creating passing angles, "
+                "supporting underneath the ball and recognising forward "
+                "options. Protect central spaces, provide defensive "
+                "balance, anticipate second balls and support transitions "
+                "in both directions.",
+
+            "#8 — Central Midfielder":
+                "Connect midfield and attack through intelligent "
+                "movement and forward support. Recognise opportunities "
+                "to break lines, combine around the ball and arrive "
+                "in attacking areas, while recovering quickly and "
+                "contributing to defensive organisation.",
+
             "#10 — Attacking Midfielder":
-                "Operate between the lines to connect midfield and attack. Receive in advanced spaces, create overloads around the ball, support the #9, arrive in scoring areas, and react immediately after possession is lost.",
-            "#7 — Right Winger":
-                "Provide width to stretch the opposition before recognising moments to attack inside. Eliminate defenders 1v1, combine with supporting players, and create or finish goal-scoring opportunities.",
-            "#11 — Left Winger":
-                "Provide width to stretch the opposition before recognising moments to attack inside. Eliminate defenders 1v1, combine with supporting players, and create or finish goal-scoring opportunities.",
+                "Operate between opposition lines to create and "
+                "exploit space. Receive in advanced positions, "
+                "combine with forwards, create scoring opportunities "
+                "and recognise when to run beyond the defensive line. "
+                "Contribute to pressing and react immediately "
+                "when possession is lost.",
+
+            "#7 & #11 — Wide Forwards":
+                "Provide width to stretch the opposition, recognising "
+                "when to attack inside or run behind. Coordinate "
+                "movements with fullbacks, create advantages through "
+                "1v1 actions and combinations, contribute goals "
+                "and assists, and support collective pressing "
+                "and defensive recovery.",
+
             "#9 — Striker":
-                "Occupy the opposition centre backs, initiate the press from the front, provide a forward outlet during transition, connect teammates into attack, and make penetrating runs beyond the defensive line.",
+                "Occupy opposition centre backs, provide a forward "
+                "passing option and recognise when to link play "
+                "or threaten space behind. Create and finish "
+                "scoring opportunities, initiate the press "
+                "and compete for first and second balls."
         }
     },
+
+    
     "1-4-1-4-1": {
-        "pos":[(5,40,"1"),(22,10,"2"),(20,28,"4"),(20,52,"5"),(22,70,"3"),
-               (35,40,"6"),
-               (52,15,"7"),(52,30,"8"),(52,50,"10"),(52,65,"11"),
-               (75,40,"9")],
-        "roles":{
+        "pos": [
+            (5, 40, "1"),
+            (22, 10, "2"),
+            (20, 28, "4"),
+            (20, 52, "5"),
+            (22, 70, "3"),
+            (35, 40, "6"),
+            (52, 15, "7"),
+            (52, 30, "8"),
+            (52, 50, "10"),
+            (52, 65, "11"),
+            (75, 40, "9")
+        ],
+
+        "roles": {
             "#1 — Goalkeeper":
-                "Organise the defensive block, communicate constantly with the back four, and distribute quickly on regain to launch the counter-attack.",
-            "#2 — Right Back":
-                "Maintain defensive width on the right side, stay connected to the centre backs, and recover immediately on transition. Contribute forward only when the moment is clearly on.",
-            "#3 — Left Back":
-                "Maintain defensive width on the left side, stay connected to the centre backs, and recover immediately on transition. Contribute forward only when the moment is clearly on.",
+                "Organise the defensive block and communicate "
+                "with the back four. Manage space behind the "
+                "defensive line and recognise opportunities "
+                "to launch attacks quickly after regaining possession.",
+
+            "#2 & #3 — Fullbacks":
+                "Stay connected to the centre backs, protect "
+                "wide defensive spaces and recognise when to "
+                "engage the ball or provide cover. Support "
+                "attacking transitions when opportunities arise "
+                "without unnecessarily exposing the defensive unit.",
+
             "#4 & #5 — Centre Backs":
-                "Protect central spaces, win first contacts and aerial duels, organise the defensive line, and deny penetration through the middle. Step aggressively to intercept when the opportunity is clear.",
+                "Protect central spaces, maintain compactness "
+                "and organise the defensive line. Recognise "
+                "when to step forward to intercept, when to "
+                "provide cover and how to manage space behind. "
+                "Compete for first balls and anticipate second balls.",
+
             "#6 — Defensive Midfielder":
-                "Screen the back four at all times. Hold central positions, protect the space in front of the defensive line, and provide the balance that allows the midfield four to press around her.",
-            "#8 — Right Central Midfielder":
-                "Drop into the midfield line and stay compact. Press aggressively on triggers, protect the right half space, stay connected to #6 and #7, and contribute to counter-attacks immediately on regain.",
-            "#10 — Left Central Midfielder":
-                "Drop into the midfield line and stay compact. Press aggressively on triggers, protect the left half space, stay connected to #6 and #11, and contribute to counter-attacks immediately on regain.",
-            "#7 — Right Wide Midfielder":
-                "Stay narrow and compact — protect the right half space, not the wide channel. Press the ball carrier when play enters your zone and stay connected to the defensive block.",
-            "#11 — Left Wide Midfielder":
-                "Stay narrow and compact — protect the left half space, not the wide channel. Press the ball carrier when play enters your zone and stay connected to the defensive block.",
+                "Screen central spaces in front of the back four "
+                "and maintain the balance of the defensive block. "
+                "Recognise when to hold, shift or step forward "
+                "to support pressure. Anticipate second balls "
+                "and provide a forward passing option on regain.",
+
+            "#8 & #10 — Central Midfielders":
+                "Stay connected within the midfield line, "
+                "protect central spaces and recognise pressing "
+                "triggers. Coordinate pressure and cover with "
+                "the #6 and wide midfielders. On regain, "
+                "support forward play and make purposeful "
+                "runs into available space.",
+
+            "#7 & #11 — Wide Midfielders":
+                "Maintain compactness with the midfield unit "
+                "and protect inside passing lanes. Recognise "
+                "when to press wide, when to recover and "
+                "when to support the fullback. On regain, "
+                "provide width or make forward runs "
+                "to support the counter-attack.",
+
             "#9 — Striker":
-                "Lead the press from the front to initiate the defensive block. Limit opposition build-up options, force play into predictable areas, and be ready to exploit transitions immediately on regain.",
+                "Lead the first line of pressure, limit "
+                "opposition build-up options and direct play "
+                "towards areas where teammates can apply "
+                "pressure. Provide a forward outlet on regain "
+                "and recognise opportunities to attack "
+                "before the opposition recovers."
         }
     },
+
+    
     "1-4-4-2": {
-        "pos":[(5,40,"1"),(27,10,"2"),(24,28,"4"),(24,52,"5"),(27,70,"3"),
-               (57,10,"7"),(54,28,"8"),(54,52,"10"),(57,70,"11"),(88,28,"9"),(88,52,"9")],
-        "roles":{
+        "pos": [
+            (5, 40, "1"),
+            (27, 10, "2"),
+            (24, 28, "4"),
+            (24, 52, "5"),
+            (27, 70, "3"),
+            (57, 10, "7"),
+            (54, 28, "8"),
+            (54, 52, "10"),
+            (57, 70, "11"),
+            (88, 28, "9"),
+            (88, 52, "9")
+        ],
+
+        "roles": {
             "#1 — Goalkeeper":
-                "Organise the defensive structure, distribute with purpose, and act as an additional outfield option during build-up.",
-            "#2 — Right Back":
-                "Provide width on the right, combine with #7 to create overloads, and recover quickly on transition.",
-            "#3 — Left Back":
-                "Provide width on the left, combine with #11 to create overloads, and recover quickly on transition.",
+                "Support possession when needed, organise "
+                "the defensive structure and manage space "
+                "behind the defensive line. Recognise "
+                "opportunities for purposeful distribution "
+                "and quick attacking transitions.",
+
+            "#2 & #3 — Fullbacks":
+                "Recognise when to provide width and "
+                "support combinations with wide midfielders. "
+                "Maintain defensive balance, stay connected "
+                "to the centre backs and recover quickly "
+                "when possession is lost.",
+
             "#4 & #5 — Centre Backs":
-                "Ball-playing defenders. Protect central spaces, win duels, organise the defensive line, and play forward whenever the opportunity is on.",
-            "#7 — Right Midfielder":
-                "Stay wide to stretch the opposition, deliver early crosses, press aggressively from the front, and track back to support defensively.",
-            "#8 — Right Central Midfielder":
-                "Win second balls, connect between the lines, press on triggers, and arrive into the box from deep positions.",
-            "#10 — Left Central Midfielder":
-                "Win second balls, connect between the lines, press on triggers, and arrive into the box from deep positions.",
-            "#11 — Left Midfielder":
-                "Stay wide to stretch the opposition, deliver early crosses, press aggressively from the front, and track back to support defensively.",
+                "Protect central spaces, manage defensive "
+                "depth and organise the back four. "
+                "Recognise opportunities to progress "
+                "the ball through passing or carrying "
+                "forward, and compete for first "
+                "and second balls.",
+
+            "#7 & #11 — Wide Midfielders":
+                "Provide width when attacking and "
+                "recognise opportunities to combine "
+                "or attack space behind. Deliver "
+                "quality crosses and support the "
+                "two forwards. Recover into the "
+                "midfield line and coordinate "
+                "pressing with nearby teammates.",
+
+            "#8 & #10 — Central Midfielders":
+                "Connect the defensive and attacking "
+                "units, create forward passing options "
+                "and support combinations. Maintain "
+                "central balance, recognise pressing "
+                "triggers, compete for second balls "
+                "and time supporting runs into attack.",
+
             "#9 & #9 — Strikers":
-                "Combine in pairs, press from the front to initiate the defensive block, provide forward outlets during transition, and support each other in and out of possession.",
+                "Work together to occupy and challenge "
+                "opposition defenders. Coordinate "
+                "movements to provide depth, link play "
+                "and create scoring opportunities. "
+                "Lead the press together and provide "
+                "forward outlets during attacking transitions."
         }
-    },
+    }
 }
+
 
 PROFILES = {
     "#1 — Goalkeeper": {
