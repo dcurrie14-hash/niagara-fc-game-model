@@ -486,6 +486,75 @@ FORMATIONS = {
         }
     },
 
+    
+    "1-4-2-3-1": {
+        "pos": [
+            (5, 40, "1"),
+            (27, 10, "2"),
+            (24, 28, "4"),
+            (24, 52, "5"),
+            (27, 70, "3"),
+            (43, 29, "6"),
+            (43, 51, "8"),
+            (75, 10, "7"),
+            (66, 40, "10"),
+            (75, 70, "11"),
+            (90, 40, "9")
+        ],
+
+        "roles": {
+            "#1 — Goalkeeper":
+                "Support build-up as an additional passing option, "
+                "recognise opportunities to progress forward and "
+                "initiate attacks with purposeful distribution. "
+                "Organise the defensive line and manage space "
+                "behind the defence.",
+
+            "#2 & #3 — Fullbacks":
+                "Recognise when to provide width, overlap, underlap "
+                "or support underneath. Coordinate movements with "
+                "wide forwards and central midfielders to create "
+                "attacking advantages, while maintaining defensive "
+                "balance and recovering quickly when possession is lost.",
+
+            "#4 & #5 — Centre Backs":
+                "Initiate build-up, recognise opportunities to carry "
+                "forward or break lines through passing, and create "
+                "forward options with the midfield. Protect central "
+                "spaces, manage defensive depth, provide cover "
+                "and organise the defensive unit.",
+
+            "#6, #8 & #10 — Central Midfielders":
+                "Operate as a connected, flexible midfield unit. "
+                "Recognise opportunities to rotate, support underneath, "
+                "receive between lines or advance beyond the ball. "
+                "Coordinate movements to create forward passing options "
+                "and attacking advantages while maintaining defensive "
+                "balance. Responsibilities change according to the "
+                "game situation, teammates' movements and available "
+                "spaces. React collectively during transitions to "
+                "apply pressure, protect central spaces and recover "
+                "defensive organisation.",
+
+            "#7 & #11 — Wide Forwards":
+                "Provide width to stretch the opposition and recognise "
+                "when to attack inside or threaten space behind. "
+                "Combine with fullbacks and central midfielders, "
+                "create advantages through 1v1 actions and coordinated "
+                "movements, contribute goals and assists, and support "
+                "collective pressing and defensive recovery.",
+
+            "#9 — Striker":
+                "Occupy opposition centre backs, provide a forward "
+                "passing option and recognise opportunities to link "
+                "play or run behind. Create and finish scoring "
+                "opportunities, initiate the press and compete "
+                "for first and second balls."
+        }
+    }
+}
+
+
 
 PROFILES = {
     "#1 — Goalkeeper": {
