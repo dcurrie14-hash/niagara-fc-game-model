@@ -35,46 +35,199 @@ def get_img(filename):
     return None
 
 # ── CSS ───────────────────────────────────────────────────────────────────────
+
 def apply_css():
     st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
-html,body,[class*="css"]{font-family:'Open Sans',sans-serif;background:#060E18;}
-h1{font-family:'Bebas Neue',sans-serif;letter-spacing:3px;font-size:2.6em!important;color:#F5F5F5;}
-h2,h3,h4,h5{font-family:'Oswald',sans-serif;letter-spacing:1px;color:#F5F5F5;}
-.block-container{padding-top:1.2rem;padding-bottom:2rem;background:#060E18;}
-.stApp{background-color:#060E18;}
-[data-testid="stSidebar"]{background:#0D1B2A!important;border-right:2px solid #4169E1;}
-[data-testid="stSidebar"] *{color:#F5F5F5!important;}
 
-.card,.card-red,.card-orange,.card-gold,.card-gray,.card-blue,.card-green{
-    background:#0D1B2A;
-    border-left:4px solid #4169E1;
-    padding:10px 14px;
-    margin:5px 0;
-    border-radius:0 6px 6px 0;
-    font-size:0.87em;
-    line-height:1.6;
-    color:#F5F5F5!important;
-}
-.card *,.card-red *,.card-orange *,.card-gold *,.card-gray *,.card-blue *,.card-green *{
-    color:#F5F5F5!important;
-}
-.card-red{border-left-color:#E53935!important;}
-.card-orange{border-left-color:#F4A261!important;}
-.card-gold{border-left-color:#F5C518!important;}
-.card-gray{border-left-color:#BDBDBD!important;}
-.card-blue{border-left-color:#89B4FF!important;}
-.card-green{border-left-color:#4CAF50!important;}
+/* ==========================================
+   GLOBAL BACKGROUND & FONTS
+   ========================================== */
 
-.identity-word{font-family:'Bebas Neue',sans-serif;font-size:2em;letter-spacing:4px;color:#4169E1;display:block;line-height:1.1;}
-.quote-block{border-left:4px solid #4169E1;padding:14px 20px;margin:16px 0;font-style:italic;font-size:1.05em;color:#BDBDBD;background:#0D1B2A;border-radius:0 8px 8px 0;}
-textarea{font-size:0.84em!important;background:#0D1B2A!important;border-color:#4169E1!important;color:#F5F5F5!important;}
-.stTabs [data-baseweb="tab-list"]{gap:3px;background:transparent;}
-.stTabs [data-baseweb="tab"]{background:#0D1B2A;border-radius:4px 4px 0 0;padding:7px 16px;font-weight:600;font-size:0.83em;color:#888;border:1px solid #1a2e4a;border-bottom:none;}
-.stTabs [aria-selected="true"]{background:#4169E1;color:#fff;border-color:#4169E1;}
-footer,header{visibility:hidden;}
-p,li,small{color:#F5F5F5;}
+html, body, [class*="css"] {
+    font-family: 'Open Sans', sans-serif;
+    background: #060E18;
+}
+
+.block-container {
+    padding-top: 1.2rem;
+    padding-bottom: 2rem;
+    background: #060E18;
+}
+
+.stApp {
+    background-color: #060E18;
+}
+
+/* ==========================================
+   CONSISTENT HEADINGS
+   ========================================== */
+
+/* Main page titles */
+h1,
+[data-testid="stMain"] h1,
+[data-testid="stMarkdownContainer"] h1 {
+    font-family: 'Bebas Neue', sans-serif !important;
+    letter-spacing: 3px !important;
+    font-size: 2.6em !important;
+    font-weight: 400 !important;
+    color: #C1C7CE !important;
+}
+
+/* Section headings */
+h2, h3, h4, h5,
+[data-testid="stMain"] h2,
+[data-testid="stMain"] h3,
+[data-testid="stMain"] h4,
+[data-testid="stMain"] h5,
+[data-testid="stMarkdownContainer"] h2,
+[data-testid="stMarkdownContainer"] h3,
+[data-testid="stMarkdownContainer"] h4,
+[data-testid="stMarkdownContainer"] h5 {
+    font-family: 'Oswald', sans-serif !important;
+    letter-spacing: 1px !important;
+    color: #D0D5DA !important;
+}
+
+/* ==========================================
+   SIDEBAR
+   ========================================== */
+
+[data-testid="stSidebar"] {
+    background: #0D1B2A !important;
+    border-right: 2px solid #4169E1;
+}
+
+[data-testid="stSidebar"] * {
+    color: #F5F5F5 !important;
+}
+
+/* ==========================================
+   CARDS
+   ========================================== */
+
+.card,
+.card-red,
+.card-orange,
+.card-gold,
+.card-gray,
+.card-blue,
+.card-green {
+    background: #0D1B2A;
+    border-left: 4px solid #4169E1;
+    padding: 10px 14px;
+    margin: 5px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.87em;
+    line-height: 1.6;
+    color: #F5F5F5 !important;
+}
+
+.card *,
+.card-red *,
+.card-orange *,
+.card-gold *,
+.card-gray *,
+.card-blue *,
+.card-green * {
+    color: #F5F5F5 !important;
+}
+
+.card-red {
+    border-left-color: #E53935 !important;
+}
+
+.card-orange {
+    border-left-color: #F4A261 !important;
+}
+
+.card-gold {
+    border-left-color: #F5C518 !important;
+}
+
+.card-gray {
+    border-left-color: #BDBDBD !important;
+}
+
+.card-blue {
+    border-left-color: #89B4FF !important;
+}
+
+.card-green {
+    border-left-color: #4CAF50 !important;
+}
+
+/* ==========================================
+   IDENTITY & QUOTE BLOCKS
+   ========================================== */
+
+.identity-word {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2em;
+    letter-spacing: 4px;
+    color: #4169E1;
+    display: block;
+    line-height: 1.1;
+}
+
+.quote-block {
+    border-left: 4px solid #4169E1;
+    padding: 14px 20px;
+    margin: 16px 0;
+    font-style: italic;
+    font-size: 1.05em;
+    color: #BDBDBD;
+    background: #0D1B2A;
+    border-radius: 0 8px 8px 0;
+}
+
+/* ==========================================
+   TABS
+   ========================================== */
+
+.stTabs [data-baseweb="tab-list"] {
+    gap: 3px;
+    background: transparent;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background: #0D1B2A;
+    border-radius: 4px 4px 0 0;
+    padding: 7px 16px;
+    font-weight: 600;
+    font-size: 0.83em;
+    color: #A4AFBC;
+    border: 1px solid #1A2E4A;
+    border-bottom: none;
+}
+
+.stTabs [aria-selected="true"] {
+    background: #4169E1;
+    color: #FFFFFF;
+    border-color: #4169E1;
+}
+
+/* ==========================================
+   INPUTS & GENERAL TEXT
+   ========================================== */
+
+textarea {
+    font-size: 0.84em !important;
+    background: #0D1B2A !important;
+    border-color: #4169E1 !important;
+    color: #F5F5F5 !important;
+}
+
+p, li, small {
+    color: #F5F5F5;
+}
+
+/* Hide Streamlit header and footer */
+footer, header {
+    visibility: hidden;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
