@@ -198,18 +198,19 @@ p, li, small {
    GLOBAL HEADING STANDARDS
    ========================================== */
 
+
 /* Main page headings — muted silver-grey */
 
 h1,
 .stApp [data-testid="stMain"] h1,
-.stApp [data-testid="stMain"] h1 *,
 .stApp [data-testid="stMain"] [data-testid="stMarkdownContainer"] h1 {
     font-family: 'Bebas Neue', sans-serif !important;
-    font-size: 2.6em !important;
+    font-size: 2rem !important;
     font-weight: 400 !important;
-    letter-spacing: 3px !important;
+    letter-spacing: 2px !important;
     color: #C1C7CE !important;
 }
+
 
 /* Section headings — soft silver-grey */
 
