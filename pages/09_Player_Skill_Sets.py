@@ -25,6 +25,10 @@ st.set_page_config(
 apply_css()
 sidebar_brand()
 
+# ==========================================
+# CATEGORY COLOURS
+# ==========================================
+
 CAT_COLORS = {
     "Technical": "#4169E1",
     "Tactical": "#FFD700",
@@ -33,10 +37,14 @@ CAT_COLORS = {
     "NFC Non-Negotiables": "#00BFFF",
 }
 
-# Page-specific styling
+# ==========================================
+# PAGE STYLING
+# ==========================================
+
 st.markdown("""
 <style>
-/* Headings */
+
+/* Main headings */
 [data-testid="stMain"] h1,
 [data-testid="stMain"] h2,
 [data-testid="stMain"] h3,
@@ -53,7 +61,7 @@ st.markdown("""
     margin-bottom: 10px;
 }
 
-/* Expander header: normal, hover and expanded */
+/* Expander headings */
 [data-testid="stExpander"] details > summary,
 [data-testid="stExpander"] details > summary:hover,
 [data-testid="stExpander"] details[open] > summary,
@@ -62,12 +70,15 @@ st.markdown("""
     color: #FFFFFF !important;
 }
 
-/* Text and icons inside headers */
+/* Expander heading text */
 [data-testid="stExpander"] summary p,
-[data-testid="stExpander"] summary span,
+[data-testid="stExpander"] summary span {
+    color: #FFFFFF !important;
+}
+
+/* Expander arrows */
 [data-testid="stExpander"] summary svg {
     color: #FFFFFF !important;
-    fill: currentColor;
 }
 
 /* Expander content */
@@ -75,12 +86,50 @@ st.markdown("""
     background: #071522 !important;
 }
 
-/* Tab readability */
+/* Position tabs */
 [data-testid="stTabs"] button {
     white-space: nowrap;
 }
+
+/* Score bar rows */
+.nfc-score-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 11px 0;
+    width: 100%;
+}
+
+.nfc-score-label {
+    width: 145px;
+    flex-shrink: 0;
+    font-size: 0.82em;
+    font-weight: 700;
+}
+
+.nfc-score-track {
+    flex: 1;
+    min-width: 20px;
+    height: 9px;
+    background: #1A2E4A;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.nfc-score-value {
+    width: 34px;
+    flex-shrink: 0;
+    text-align: right;
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
 </style>
 """, unsafe_allow_html=True)
+
+# ==========================================
+# PAGE INTRODUCTION
+# ==========================================
 
 st.markdown("# PLAYER SKILL-SETS")
 
@@ -107,10 +156,9 @@ st.markdown(
 )
 
 
-
-# ==================================================
+# ==========================================
 # POSITIONAL PROFILES
-# ==================================================
+# ==========================================
 
 tabs = st.tabs(list(PROFILES.keys()))
 
@@ -118,6 +166,7 @@ for tab, (pos, profile) in zip(tabs, PROFILES.items()):
 
     with tab:
 
+        # Position introduction
         st.markdown(
             f"<div class='quote-block'>{profile['intro']}</div>",
             unsafe_allow_html=True
@@ -128,9 +177,9 @@ for tab, (pos, profile) in zip(tabs, PROFILES.items()):
             gap="large"
         )
 
-        # ==========================================
-        # LEFT COLUMN — IDEAL POSITIONAL PROFILE
-        # ==========================================
+        # ==================================
+        # LEFT COLUMN — RADAR AND SCORES
+        # ==================================
 
         with col_chart:
 
@@ -150,24 +199,25 @@ for tab, (pos, profile) in zip(tabs, PROFILES.items()):
             cats = list(CAT_COLORS.keys())
             scores = profile["scores"]
 
-            
             for cat, score in zip(cats, scores):
+
                 clr = CAT_COLORS[cat]
-                bar_pct = int((score / 5) * 100)
+                bar_pct = max(
+                    0,
+                    min(100, int((score / 5) * 100))
+                )
 
                 bar_html = (
-                    f'<div style="display:flex;align-items:center;'
-                    f'gap:10px;margin:10px 0;">'
-                    f'<span style="color:{clr};font-weight:700;'
-                    f'font-size:0.82em;min-width:145px;">'
-                    f'{cat}</span>'
-                    f'<div style="flex:1;background:#1A2E4A;'
-                    f'border-radius:5px;height:9px;overflow:hidden;">'
-                    f'<div style="width:{bar_pct}%;background:{clr};'
-                    f'height:100%;border-radius:5px;"></div>'
+                    f'<div class="nfc-score-row">'
+                    f'<span class="nfc-score-label" '
+                    f'style="color:{clr};">{cat}</span>'
+                    f'<div class="nfc-score-track">'
+                    f'<div style="width:{bar_pct}%;'
+                    f'height:100%;background:{clr};'
+                    f'border-radius:5px;"></div>'
                     f'</div>'
-                    f'<span style="color:{clr};font-weight:700;'
-                    f'min-width:32px;text-align:right;">'
+                    f'<span class="nfc-score-value" '
+                    f'style="color:{clr};">'
                     f'{score:.1f}</span>'
                     f'</div>'
                 )
@@ -177,48 +227,7 @@ for tab, (pos, profile) in zip(tabs, PROFILES.items()):
                     unsafe_allow_html=True
                 )
 
-
-                st.markdown(
-                    f"""
-                    <div style="
-                        display:flex;
-                        align-items:center;
-                        gap:10px;
-                        margin:10px 0;
-                    ">
-                        <span style="
-                            color:{clr};
-                            font-weight:700;
-                            font-size:0.82em;
-                            min-width:145px;
-                        ">{cat}</span>
-
-                        <div style="
-                            flex:1;
-                            background:#1A2E4A;
-                            border-radius:5px;
-                            height:9px;
-                            overflow:hidden;
-                        ">
-                            <div style="
-                                width:{bar_pct}%;
-                                background:{clr};
-                                height:100%;
-                                border-radius:5px;
-                            "></div>
-                        </div>
-
-                        <span style="
-                            color:{clr};
-                            font-weight:700;
-                            min-width:32px;
-                            text-align:right;
-                        ">{score:.1f}</span>
-                    </div>
-                    """,
-                    unsafe_allow_html=True
-                )
-
+            # Profile explanation
             st.markdown(
                 "<div class='card' style='margin-top:20px;'>"
                 "<strong>Understanding the Profile</strong>"
@@ -232,17 +241,22 @@ for tab, (pos, profile) in zip(tabs, PROFILES.items()):
             )
 
 
-        # ==========================================
-        # RIGHT COLUMN — DEVELOPMENT ATTRIBUTES
-        # ==========================================
+        # ==================================
+        # RIGHT COLUMN — PLAYER ATTRIBUTES
+        # ==================================
 
         with col_detail:
 
-            st.markdown("#### PLAYER DEVELOPMENT EXPECTATIONS")
+            st.markdown(
+                "#### PLAYER DEVELOPMENT EXPECTATIONS"
+            )
 
             for cat, attrs in profile["attrs"].items():
 
-                clr = CAT_COLORS.get(cat, "#4169E1")
+                clr = CAT_COLORS.get(
+                    cat,
+                    "#4169E1"
+                )
 
                 with st.expander(
                     cat,
@@ -251,23 +265,26 @@ for tab, (pos, profile) in zip(tabs, PROFILES.items()):
 
                     for attr in attrs:
 
+                        attr_html = (
+                            f'<div class="card" '
+                            f'style="border-left:3px solid {clr};'
+                            f'margin:5px 0;">'
+                            f'→ {attr}'
+                            f'</div>'
+                        )
+
                         st.markdown(
-                            f"""
-                            <div class='card' style="
-                                border-left:3px solid {clr};
-                                margin:5px 0;
-                            ">
-                                → {attr}
-                            </div>
-                            """,
+                            attr_html,
                             unsafe_allow_html=True
                         )
 
+            # Development message
             st.markdown(
                 "<div class='card' style='"
                 "border-left:3px solid #4169E1;"
                 "margin-top:18px;'>"
-                "<strong>Development Focus</strong><br><br>"
+                "<strong>Development Focus</strong>"
+                "<br><br>"
                 "These are qualities to develop through "
                 "training, match experiences, feedback "
                 "and individual reflection. "
