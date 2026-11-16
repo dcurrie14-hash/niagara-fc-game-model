@@ -1,251 +1,723 @@
+
 import streamlit as st
-import sys, os
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils import apply_css, sidebar_brand, get_img, ROYAL, RED, GOLD, NAVY, WHITE
+import sys
+import os
 
-st.set_page_config(page_title="Training Methods | Niagara FC", page_icon="🏃", layout="wide")
-apply_css(); sidebar_brand()
+sys.path.insert(
+    0,
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+)
 
-st.markdown("# TRAINING METHODOLOGY & DESIGN")
-st.markdown("<div class='quote-block'>We design the problem, not just the solution. Our role is to create environments that encourage players to perceive information, make decisions, and discover effective solutions within realistic game situations.</div>", unsafe_allow_html=True)
+from utils import apply_css, sidebar_brand, get_img
 
-tabs = st.tabs(["📚 Methodology","📋 SCORE & Constraints","🏟️ Session Example","📸 Session Drills","🔢 Environment Design"])
+st.set_page_config(
+    page_title="Training Philosophy | Niagara FC",
+    page_icon="🏃",
+    layout="wide"
+)
 
-# ═══════════════════════════════════════════════════
-# TAB 1 — METHODOLOGY
-# ═══════════════════════════════════════════════════
+apply_css()
+sidebar_brand()
+
+# ==========================================
+# PAGE-SPECIFIC STYLING
+# ==========================================
+
+st.markdown("""
+<style>
+[data-testid="stMain"] h1,
+[data-testid="stMain"] h2,
+[data-testid="stMain"] h3,
+[data-testid="stMain"] h4 {
+    color: #F2F5FA !important;
+}
+
+[data-testid="stMain"] .stTabs button {
+    white-space: nowrap;
+}
+
+.training-kicker {
+    color: #FFD700;
+    font-family: Oswald, sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.8px;
+    margin: 18px 0 10px;
+}
+
+.training-note {
+    color: #B9C8D8;
+    font-size: 0.91rem;
+    line-height: 1.65;
+}
+
+.training-small {
+    color: #AFC0D2;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.training-rule {
+    border-top: 1px solid #28405D;
+    margin: 20px 0;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# ==========================================
+# PAGE INTRODUCTION
+# ==========================================
+
+st.markdown("# TRAINING PHILOSOPHY & PRACTICE DESIGN")
+
+st.markdown(
+    "<div class='quote-block'>"
+    "The game drives the training. "
+    "The objective determines the methodology."
+    "</div>",
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    "My approach to training is flexible. The method I choose depends "
+    "on the game problem, the needs of the players and where we are "
+    "within our periodisation cycle. What remains consistent is the "
+    "environment I want to create: purposeful, challenging, competitive "
+    "and enjoyable, with players actively involved in making decisions."
+)
+
+tabs = st.tabs([
+    "Coaching Approach",
+    "Practice Design",
+    "On the Training Ground"
+])
+
+# ==========================================
+# TAB 1 — COACHING APPROACH
+# ==========================================
+
 with tabs[0]:
-    st.markdown("<div style='font-family:Oswald,sans-serif;font-size:0.95em;color:#FFD700;letter-spacing:1px;margin-bottom:12px;'>Our training methodology is guided by the game model, the specific game moment, and the needs of the players. Practice formats, methodologies, and constraints are selected to create the learning environment best suited to achieving the objective.</div>", unsafe_allow_html=True)
 
-    c1, c2 = st.columns(2)
+    st.markdown("### WHAT STAYS CONSISTENT")
+
+    st.markdown(
+        "I want players to train with energy and purpose. "
+        "They should be challenged to recognise information, "
+        "make decisions and solve problems, rather than simply "
+        "reproduce movements they've been shown."
+    )
+
+    c1, c2 = st.columns(2, gap="medium")
+
     with c1:
-        st.markdown("<div style='font-family:Oswald,sans-serif;font-size:1.2em;color:#F5F5F5;letter-spacing:1px;margin:16px 0 8px;'>WHOLE — PART — WHOLE</div>", unsafe_allow_html=True)
-        st.markdown("""<div class='card'>
-        Most game moments are best learned within the context of the game. Whole-Part-Whole is therefore my preferred methodology.
-        Players first encounter the game problem in a realistic game environment before key learning moments are isolated when necessary.
-        They then return to the game where solutions must be recognised and executed under realistic pressure.<br><br>
-        I rarely stop sessions to provide answers immediately. Instead, I prefer to manipulate the environment and allow players
-        to discover solutions through repetition, discussion, and guided questioning.
-        </div>""", unsafe_allow_html=True)
+        st.markdown(
+            "<div class='card card-blue'>"
+            "<b>Tempo & Engagement</b><br><br>"
+            "Purposeful activity, meaningful repetition and "
+            "minimal unnecessary downtime. Players should "
+            "be actively involved in the session."
+            "</div>",
+            unsafe_allow_html=True
+        )
 
-        st.markdown("<div style='font-family:Oswald,sans-serif;font-size:1.2em;color:#F5F5F5;letter-spacing:1px;margin:16px 0 8px;'>WHEN I ADAPT THE METHODOLOGY</div>", unsafe_allow_html=True)
-
-        st.markdown("""<div class='card card-blue'><b>Progressive Part Method</b><br><br>
-        If players repeatedly struggle with a specific tactical moment, I may isolate and repeat that situation before returning to the full game.<br><br>
-        For example, if midfield players are not recognising opportunities to support underneath the #9 during attacking organisation,
-        I may create a Progressive Part activity that increases repetition of that specific moment before progressing back into a larger game.
-        </div>""", unsafe_allow_html=True)
-
-        st.markdown("""<div class='card'><b>Whole Method</b><br><br>
-        When introducing a new game problem — for example, our pressing structure in a new system — I'll often start with an 11v11 or large-sided game
-        and let players experience it with minimal intervention. This shows me what they already understand before I decide where to coach.
-        </div>""", unsafe_allow_html=True)
-
-        st.markdown("""<div class='card'><b>Part Method</b><br><br>
-        Part Method is used sparingly — mainly for set-piece organisation or isolated technical detail, such as our short corner routine,
-        where precise repetition matters more than game realism.
-        </div>""", unsafe_allow_html=True)
+        st.markdown(
+            "<div class='card'>"
+            "<b>Decision-Making</b><br><br>"
+            "Practices should give players information to "
+            "recognise and decisions to make. The aim is "
+            "understanding, not simply completing an exercise."
+            "</div>",
+            unsafe_allow_html=True
+        )
 
     with c2:
-        st.markdown("<div style='font-family:Oswald,sans-serif;font-size:1.2em;color:#F5F5F5;letter-spacing:1px;margin:16px 0 8px;'>HOW I SELECT PRACTICE FORMATS</div>", unsafe_allow_html=True)
-        st.markdown("""<div class='card card-gold'>
-        The format is chosen by what the moment demands. To work on the relationship between the #6 and centre backs,
-        I'll use a Functional Practice — fewer players, more repetitions of that specific connection.
-        To develop our pressing triggers as a team, I'll use Phase of Play or an 8v8, where the picture is closer to a real game.
-        Small-Sided Games are my go-to for raw decision-making reps — more touches, more transitions, more problems to solve.
-        </div>""", unsafe_allow_html=True)
+        st.markdown(
+            "<div class='card card-gold'>"
+            "<b>Competition</b><br><br>"
+            "Opposition, pressure and meaningful challenges "
+            "help players develop the ability to perform "
+            "when the game becomes difficult."
+            "</div>",
+            unsafe_allow_html=True
+        )
 
-        st.markdown("<div style='font-family:Oswald,sans-serif;font-size:1.2em;color:#F5F5F5;letter-spacing:1px;margin:16px 0 8px;'>HOW I USE CONSTRAINTS</div>", unsafe_allow_html=True)
-        st.markdown("""<div class='card' style='margin-bottom:0.5rem;'>
-        Training activities are influenced by the Constraints-Led Approach. Rather than prescribing solutions,
-        I manipulate the environment to encourage players to discover effective actions and behaviours.
-        Constraints are not used to restrict players — they are used to guide attention, influence behaviour,
-        and create realistic problems that players must solve.
-        </div>""", unsafe_allow_html=True)
+        st.markdown(
+            "<div class='card'>"
+            "<b>Enjoyment</b><br><br>"
+            "Players should enjoy the challenge of training. "
+            "Competition, improvement and enjoyment "
+            "should support one another."
+            "</div>",
+            unsafe_allow_html=True
+        )
 
-        for item in [
-            "To encourage quicker forward play in Zone 2, I may reduce support around the ball or create a numerical disadvantage — forcing players to recognise forward passing opportunities earlier.",
-            "To increase penetration in attacking organisation, I may reward line-breaking passes or goals scored within a set number of actions.",
-            "To improve transition reactions, I may introduce time constraints that require players to win the ball back or play forward immediately after regaining possession.",
-        ]:
-            st.markdown(f"<div class='card card-green'>→ {item}</div>", unsafe_allow_html=True)
+    st.markdown("### OUR TRAINING ENVIRONMENT")
 
-# ═══════════════════════════════════════════════════
-# TAB 2 — SCORE & CONSTRAINTS
-# ═══════════════════════════════════════════════════
+    st.markdown(
+        "Development is a shared responsibility. "
+        "Coaches are responsible for creating worthwhile "
+        "learning opportunities. Players are responsible "
+        "for how they approach them."
+    )
+
+    c1, c2 = st.columns(2, gap="medium")
+
+    with c1:
+        st.markdown("#### WHAT WE PROVIDE")
+        st.markdown(
+            "<div class='card card-blue'>"
+            "Purposeful sessions connected to our Game Model.<br><br>"
+            "Appropriate challenge and meaningful repetition.<br><br>"
+            "Opportunities to make decisions and solve problems.<br><br>"
+            "Feedback, support and room to make mistakes.<br><br>"
+            "An environment where players can compete and enjoy football."
+            "</div>",
+            unsafe_allow_html=True
+        )
+
+    with c2:
+        st.markdown("#### WHAT WE EXPECT")
+        st.markdown(
+            "<div class='card card-gold'>"
+            "<b>Be All In.</b><br><br>"
+            "Arrive ready to train and be fully engaged.<br><br>"
+            "Compete with intensity and purpose.<br><br>"
+            "Challenge yourself and your teammates.<br><br>"
+            "Be coachable and respond to feedback.<br><br>"
+            "Take responsibility for your own development."
+            "</div>",
+            unsafe_allow_html=True
+        )
+
+    st.markdown(
+        "<div class='quote-block'>"
+        "Being all in doesn't mean being perfect. "
+        "It means being committed to the work, "
+        "responding to mistakes and making the most "
+        "of every opportunity to improve."
+        "</div>",
+        unsafe_allow_html=True
+    )
+
+    st.markdown("### WHAT CHANGES")
+
+    st.markdown(
+        "The structure of training is not fixed. I may use "
+        "Whole–Part–Whole, a progressive practice, a functional "
+        "exercise or a larger game depending on what the players "
+        "need. The level of physical intensity, complexity "
+        "and coaching intervention also changes across the "
+        "training cycle."
+    )
+
+    st.markdown(
+        "<div class='card'>"
+        "<b>The principle is simple:</b> select the approach "
+        "that best serves the objective, rather than forcing "
+        "every objective into the same approach."
+        "</div>",
+        unsafe_allow_html=True
+    )
+
+
+
+# ==========================================
+# TAB 2 — PRACTICE DESIGN
+# ==========================================
+
 with tabs[1]:
-    st.markdown("<div style='font-family:Oswald,sans-serif;font-size:1.2em;color:#F5F5F5;letter-spacing:1px;margin:16px 0 8px;'>SCORE PRINCIPLES IN PRACTICE</div>", unsafe_allow_html=True)
-    st.markdown("<div class='quote-block'>Every session at Niagara FC is designed using the SCORE principles. If it does not look like the game, we change it.</div>", unsafe_allow_html=True)
 
-    for letter, word, detail, clr in [
-        ("S","Soccer Problem","Every session begins with a game moment taken directly from our game model. The problem comes from the game — not the coach.","card-red"),
-        ("C","Challenge","Constraints and conditions encourage players to solve problems and make decisions under realistic pressure.","card-orange"),
-        ("O","Opposition","The opposition provides the information players must perceive and respond to — not a prescribed drill pattern.","card-gold"),
-        ("R","Realism","Activities reflect the demands and complexity of the game. If it wouldn't happen on a Saturday, we question whether it belongs in training.","card-blue"),
-        ("E","Enjoyment","Players are challenged, engaged, and motivated to compete. Enthusiasm for the game is never sacrificed for organisation.","card-green"),
+    st.markdown("### FROM THE GAME TO THE TRAINING GROUND")
+
+    st.markdown(
+        "Session design begins with what I observe in matches "
+        "and training. I identify the problem, consider what "
+        "players need to understand, then select a practice "
+        "that gives them opportunities to work through it."
+    )
+
+    for heading, detail, style in [
+        (
+            "1. IDENTIFY THE GAME PROBLEM",
+            "What are players struggling to recognise or execute? "
+            "Is the issue technical, tactical, physical or a "
+            "combination of factors?",
+            "card-blue"
+        ),
+        (
+            "2. ESTABLISH THE LEARNING OBJECTIVE",
+            "What should players recognise, decide or do "
+            "more effectively? The objective should connect "
+            "to our Game Model and be observable in a match.",
+            "card"
+        ),
+        (
+            "3. SELECT THE PRACTICE",
+            "Choose the numbers, space, opposition, format "
+            "and conditions that best represent the problem "
+            "and provide appropriate repetition.",
+            "card"
+        ),
+        (
+            "4. CONSIDER THE TRAINING CYCLE",
+            "Adjust the physical load, complexity and "
+            "duration according to the stage of periodisation, "
+            "proximity to matches and player readiness.",
+            "card"
+        ),
+        (
+            "5. OBSERVE AND ADAPT",
+            "Are players recognising the right information "
+            "and making better decisions? Adjust the practice "
+            "or intervention when the learning isn't occurring.",
+            "card-gold"
+        )
     ]:
-        st.markdown(f"<div class='{clr}' style='color:white !important;'><span style='font-size:1.8em;font-weight:900;color:white;'>{letter}</span> <b style='color:white;'>{word}</b> <span style='color:white;'>— {detail}</span></div>", unsafe_allow_html=True)
+        st.markdown(
+            f"<div class='card {style}' style='margin-bottom:8px;'>"
+            f"<b>{heading}</b><br><br>{detail}</div>",
+            unsafe_allow_html=True
+        )
 
-    st.divider()
-    st.markdown("<div style='font-family:Oswald,sans-serif;font-size:1.2em;color:#F5F5F5;letter-spacing:1px;margin:16px 0 8px;'>EXAMPLES FROM MY ENVIRONMENT</div>", unsafe_allow_html=True)
-    st.markdown("<div class='quote-block'>By manipulating the practice environment, constraints guide attention and shape behaviour, allowing players to discover solutions rather than being given them.</div>", unsafe_allow_html=True)
+    st.markdown("### CHOOSING THE METHODOLOGY")
 
-    c1, c2, c3 = st.columns(3)
-    with c1:
-        st.markdown("""<div class='card card-red'>
-        <b>Attacking Organisation</b> <span style='color:#ccc;font-size:0.78em;font-style:italic;'>(numerical constraint)</span><br><br>
-        To encourage quicker forward play in Zone 2, I may reduce support around the ball or create a numerical disadvantage.
-        </div>""", unsafe_allow_html=True)
-    with c2:
-        st.markdown("""<div class='card card-gold'>
-        <b>Transition to Attack</b> <span style='color:#ccc;font-size:0.78em;font-style:italic;'>(time / scoring constraint)</span><br><br>
-        To reinforce our "play forward, run forward" principle, I may reward goals scored within a set number of seconds after regaining possession.
-        </div>""", unsafe_allow_html=True)
-    with c3:
-        st.markdown("""<div class='card card-blue'>
-        <b>Defensive Organisation</b> <span style='color:#ccc;font-size:0.78em;font-style:italic;'>(space constraint)</span><br><br>
-        To improve compactness, I may reduce the width of the playing area and reward regains in central areas.
-        </div>""", unsafe_allow_html=True)
+    st.markdown(
+        "I don't follow one methodology for every session. "
+        "Different problems call for different approaches, "
+        "and the same objective may require a different "
+        "approach depending on the group or stage of the season."
+    )
 
-# ═══════════════════════════════════════════════════
-# TAB 3 — SESSION EXAMPLE
-# ═══════════════════════════════════════════════════
+    with st.expander("Whole–Part–Whole"):
+        st.markdown(
+            "Players experience a problem within a game, "
+            "work on a more specific element when necessary, "
+            "then return to a larger game to apply what "
+            "they've learned. Useful when I want players "
+            "to recognise a problem in its full context "
+            "before increasing repetition of a particular moment."
+        )
+
+    with st.expander("Progressive Practice"):
+        st.markdown(
+            "A practice develops through planned progressions "
+            "in numbers, space, opposition or complexity. "
+            "I use this when players need to establish "
+            "understanding and confidence before dealing "
+            "with more demanding game situations."
+        )
+
+    with st.expander("Whole / Game-Based Practice"):
+        st.markdown(
+            "A larger or more complete game allows players "
+            "to experience realistic relationships, transitions "
+            "and decisions. This can help me assess their "
+            "understanding or challenge them to apply "
+            "principles in a less controlled environment."
+        )
+
+    with st.expander("Functional and Isolated Practice"):
+        st.markdown(
+            "Some moments benefit from focused repetition "
+            "with fewer players or more specific conditions. "
+            "This might involve a positional relationship, "
+            "a technical action or set-piece organisation. "
+            "The aim is to transfer that learning back "
+            "into the game."
+        )
+
+    st.markdown("### USING CONSTRAINTS")
+
+    st.markdown(
+        "Constraints are one of the tools I use to shape "
+        "the learning environment. Changing the space, "
+        "numbers, rules or scoring conditions can encourage "
+        "players to recognise particular opportunities "
+        "without prescribing every solution."
+    )
+
+    st.markdown(
+        "<div class='card card-blue'>"
+        "<b>Example — Attacking Organisation</b><br><br>"
+        "If players are circulating possession without "
+        "recognising opportunities to play forward, "
+        "I might create a directional game that rewards "
+        "breaking lines. The challenge is to recognise "
+        "when the forward option is available, not to "
+        "force a forward pass every time."
+        "</div>",
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        "<div class='card'>"
+        "<b>Example — Defensive Organisation</b><br><br>"
+        "If our defensive unit is becoming disconnected, "
+        "I might adjust the playing area or opposition "
+        "structure to create more frequent situations "
+        "where players must recognise when to press, "
+        "cover and recover into compact positions."
+        "</div>",
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        "<div class='card'>"
+        "<b>Example — Attacking Transition</b><br><br>"
+        "To encourage our 'play forward, run forward' "
+        "principle, I might reward quick attacking "
+        "actions after regaining possession. "
+        "The objective is to recognise and exploit "
+        "the opportunity before the opposition recovers "
+        "its organisation."
+        "</div>",
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        "<div class='quote-block'>"
+        "A constraint is only useful if it helps create "
+        "the learning we're looking for. If players "
+        "begin forcing actions or the practice loses "
+        "its connection to the game, I adjust it."
+        "</div>",
+        unsafe_allow_html=True
+    )
+
+    st.markdown("### COACHING INTERVENTIONS")
+
+    st.markdown(
+        "I vary how and when I intervene. Sometimes "
+        "players benefit from being allowed to play "
+        "and discover solutions. At other times, "
+        "a question, a brief demonstration or direct "
+        "instruction can help move the learning forward. "
+        "The decision depends on what I'm observing "
+        "and what the players need."
+    )
+
+    with st.expander("Practice design reference — SCORE"):
+        st.markdown(
+            "SCORE provides a useful check when reviewing "
+            "the quality of a training activity:"
+        )
+
+        for label, detail in [
+            ("Soccer Problem", "Is the practice connected to a real game problem?"),
+            ("Challenge", "Are players appropriately challenged?"),
+            ("Opposition", "Does opposition provide useful information and pressure?"),
+            ("Realism", "Can the learning transfer to the game?"),
+            ("Enjoyment", "Are players engaged and motivated to participate?")
+        ]:
+            st.markdown(f"**{label}** — {detail}")
+
+
+
+# ==========================================
+# TAB 3 — ON THE TRAINING GROUND
+# ==========================================
+
 with tabs[2]:
-    st.markdown("<div style='font-family:Oswald,sans-serif;font-size:1.2em;color:#F5F5F5;letter-spacing:1px;margin:16px 0 8px;'>SESSION EXAMPLE — CHANGING THE POINT OF ATTACK</div>", unsafe_allow_html=True)
-    st.markdown("<div style='background:#0D1B2A;border-left:4px solid #1E56D6;padding:12px 18px;border-radius:0 8px 8px 0;margin-bottom:16px;'><b style='color:#1E56D6;'>OBJECTIVE:</b> <span style='color:#F5F5F5;'>Develop players' ability to recognise when and why to switch the point of attack to create space and attack more effectively.</span><br><b style='color:#F5C518;'>MOMENT:</b> <span style='color:#F5F5F5;'>Attacking Organisation — Zones 2 & 3</span></div>", unsafe_allow_html=True)
 
-    st.markdown("**B Licence Format — System / Strategy / Tactics / Skill Set**")
-    c1, c2, c3, c4 = st.columns(4)
+    st.markdown("### TRAINING IN PRACTICE")
+
+    st.markdown(
+        "The examples below illustrate different ways "
+        "I use training activities to develop specific "
+        "moments within our Game Model. "
+        "They are examples, not fixed session templates. "
+        "The organisation and conditions can change "
+        "depending on the players and the objective."
+    )
+
+    # ======================================
+    # PRACTICAL EXAMPLE
+    # ======================================
+
+    st.markdown("### EXAMPLE — CHANGING THE POINT OF ATTACK")
+
+    st.markdown(
+        "<div class='card card-blue'>"
+        "<b>Game Moment</b><br>"
+        "Attacking Organisation — Zones 2 & 3"
+        "<br><br>"
+        "<b>Game Problem</b><br>"
+        "Players are forcing possession into congested "
+        "central areas rather than recognising space "
+        "available on the opposite side."
+        "<br><br>"
+        "<b>Learning Objective</b><br>"
+        "Recognise when and why to change the point "
+        "of attack to create a better opportunity "
+        "to play forward."
+        "</div>",
+        unsafe_allow_html=True
+    )
+
+    st.markdown("#### ONE POSSIBLE SESSION APPROACH")
+
+    st.markdown(
+        "For this problem, I might use a "
+        "Whole–Part–Whole structure. "
+        "The players first experience the problem "
+        "in a game, then work within a practice "
+        "that creates more opportunities to recognise "
+        "the switch before returning to a larger game."
+    )
+
+    c1, c2, c3 = st.columns(3, gap="medium")
+
     with c1:
-        st.markdown("<div class='card'><b>SYSTEM</b><br>1-4-3-3<br>Attacking & Defensive</div>", unsafe_allow_html=True)
+        st.markdown(
+            "<div class='card card-blue'>"
+            "<b>1 — EXPERIENCE</b><br><br>"
+            "<b>3v3+2 Four-Goal Game</b><br><br>"
+            "Players experience pressure and "
+            "multiple attacking options. "
+            "Observe whether they recognise "
+            "when to move the ball away "
+            "from congestion."
+            "</div>",
+            unsafe_allow_html=True
+        )
+
     with c2:
-        st.markdown("<div class='card card-blue'><b>STRATEGY</b><br>Switch play to disrupt the opposition shape and create space to attack quickly.</div>", unsafe_allow_html=True)
+        st.markdown(
+            "<div class='card card-gold'>"
+            "<b>2 — DEVELOP</b><br><br>"
+            "<b>4v4+3 Switching Game</b><br><br>"
+            "Supporting players create repeated "
+            "opportunities to move the opposition "
+            "and find space on the far side. "
+            "Focus on recognising the moment "
+            "rather than switching automatically."
+            "</div>",
+            unsafe_allow_html=True
+        )
+
     with c3:
-        st.markdown("<div class='card card-gold'><b>TACTICS</b><br>Change point of attack through wide neutrals. Combine centrally to attract pressure. Play quickly to the far side.</div>", unsafe_allow_html=True)
-    with c4:
-        st.markdown("<div class='card card-green'><b>SKILL SET</b><br>Quick short passes · Positive first touch away from pressure · Scanning & Decision Making · Movement and rotations</div>", unsafe_allow_html=True)
+        st.markdown(
+            "<div class='card'>"
+            "<b>3 — APPLY</b><br><br>"
+            "<b>8v8+2 Directional Game</b><br><br>"
+            "Return to a larger game with "
+            "more realistic relationships. "
+            "Observe whether players can "
+            "recognise and use switching "
+            "opportunities independently."
+            "</div>",
+            unsafe_allow_html=True
+        )
 
-    st.markdown("#### What / Where / Who / When / How")
-    for what, where, who, when, how in [
-        ("Switch the point of attack","Zone 2 & 3 — central and wide channels","6, 8, 10, 7, 11, 2, 3","When central spaces are overloaded or defended","Pass quickly to the wide neutral — first touch forward — attack the space"),
-        ("Fullback underlaps to support centrally","Zone 3 — as ball travels","2, 3, 4, 5","When the wide forward holds width and a central underlap is on","Read the wide forward's position, time the underlapping run, receive between the lines"),
-        ("Third-man combination to break lines","Between lines, Zone 2 transition","6, 8, 10, 9","When first receiver is pressed — look for the player beyond","Quality first pass to feet, immediate movement, third player times run beyond"),
-    ]:
-        with st.expander(f"**{what}**"):
-            tbl = "| | |\n|-|-|\n| **Where** | " + str(where) + " |\n| **Who** | " + str(who) + " |\n| **When** | " + str(when) + " |\n| **How** | " + str(how) + " |"
-            st.markdown(tbl)
+    st.markdown("#### WHAT I'M LOOKING FOR")
+
+    st.markdown(
+        "<div class='card'>"
+        "Are players scanning before receiving?<br><br>"
+        "Do they recognise when the opposition "
+        "has overloaded one side?<br><br>"
+        "Can they move the ball quickly to "
+        "the available space?<br><br>"
+        "Do supporting players adjust their "
+        "positions to create passing options?<br><br>"
+        "Most importantly, do they recognise "
+        "when to switch and when to continue "
+        "playing forward?"
+        "</div>",
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        "<div class='quote-block'>"
+        "The success of the session isn't measured "
+        "by how many times players switch the ball. "
+        "It's whether they recognise when the "
+        "switch creates an advantage and can "
+        "make that decision in a match."
+        "</div>",
+        unsafe_allow_html=True
+    )
 
     st.divider()
-    st.markdown("#### 3-Part Whole-Part-Whole Structure")
 
-    st.markdown("""<div class='card' style='margin-bottom:0.5rem;'>
-    <b style='color:#1E56D6;'>PART ONE — WHOLE</b> — <b>3v3+2 Four Goal Game</b><br><br>
-    Players immediately experience the game problem. With four scoring options available, players must constantly scan,
-    perceive pressure, and recognise opportunities to change the point of attack rather than forcing play into crowded areas.<br><br>
-    <i style='color:#aaa;'>Why this activity? The game naturally presents switching opportunities without prescribing solutions.
-    Players experience the tactical problem before coaching intervention occurs.</i>
-    </div>""", unsafe_allow_html=True)
+    # ======================================
+    # SESSION DIAGRAMS
+    # ======================================
 
-    st.markdown("""<div class='card' style='margin-bottom:0.5rem;'>
-    <b style='color:#1E56D6;'>PART TWO — PART</b> — <b>4v4+3 Open the Pitch Game</b><br><br>
-    Wide locked neutrals and a central neutral create repeated opportunities to switch play. Players are encouraged to use width
-    to move the opposition before attacking quickly into space.<br><br>
-    <i style='color:#aaa;'>Why this activity? This environment increases repetition of the specific tactical moment while maintaining
-    opposition, decision making, and realism. If players are struggling to recognise when to switch play, this activity creates
-    more frequent opportunities to practise that decision.</i>
-    </div>""", unsafe_allow_html=True)
+    st.markdown("### SESSION EXAMPLES")
 
-    st.markdown("""<div class='card' style='margin-bottom:0.5rem;'>
-    <b style='color:#1E56D6;'>PART THREE — WHOLE</b> — <b>8v8+2 Width & Switching Game</b><br><br>
-    Players return to a larger, more realistic game where they must recognise switching opportunities within a full team context.
-    Two neutrals support the team in possession and encourage circulation, while the larger space creates realistic attacking problems.<br><br>
-    <i style='color:#aaa;'>Why this activity? Success is measured by improved recognition and decision making rather than perfect execution.
-    We observe whether players are more likely to recognise, attempt, and successfully use switches of play when the opportunity emerges.</i>
-    </div>""", unsafe_allow_html=True)
+    st.markdown(
+        "Different game moments require different "
+        "training environments. These diagrams "
+        "illustrate some of the practice formats "
+        "used to challenge specific decisions "
+        "and relationships."
+    )
+
+    st.markdown("#### ATTACKING ORGANISATION")
+
+    img = get_img("8v6_Runs_behind.png")
+
+    if img:
+        c1, c2 = st.columns([1.2, 1], gap="large")
+
+        with c1:
+            st.image(
+                img,
+                use_container_width=True
+            )
+
+        with c2:
+            st.markdown("#### 8v6 — RUNS BEHIND")
+
+            st.markdown(
+                "**Game Moment:** Attacking Organisation, "
+                "Zones 3 & 4."
+            )
+
+            st.markdown(
+                "Developing the recognition and timing "
+                "of forward runs to penetrate the "
+                "opposition's defensive line."
+            )
+
+            st.markdown(
+                "**Coaching Focus**"
+            )
+
+            st.markdown(
+                "Recognise space behind the line, "
+                "coordinate the passer and runner, "
+                "and time movements to create "
+                "forward passing opportunities."
+            )
 
     st.divider()
-    c1, c2 = st.columns(2)
-    with c1:
-        st.markdown("#### Coaching Focus")
-        for item in [
-            "Perceive pressure and congestion",
-            "Scan before receiving",
-            "Recognise opportunities to switch play",
-            "Recognise when NOT to switch play",
-            "Use width to move the opposition",
-            "Attack quickly once space has been created",
-        ]:
-            st.markdown(f"<div class='card card-blue'>→ {item}</div>", unsafe_allow_html=True)
-    with c2:
-        st.markdown("#### Constraints Used")
-        for item in [
-            "Neutral players to create width and support",
-            "Multiple scoring options to encourage scanning",
-            "Positional advantages that reward switching behaviour",
-            "Scoring incentives following successful switches",
-        ]:
-            st.markdown(f"<div class='card card-gold'>→ {item}</div>", unsafe_allow_html=True)
 
-    st.markdown("""<div class='quote-block' style='margin-top:0.5rem;'>
-    <b>Coach Reflection:</b> If players are still forcing play into pressure, I may increase the value of goals scored following
-    a switch or create additional width through neutral players. If players are switching automatically without reading the game,
-    I may progressively remove constraints and allow the game to present more realistic decisions.
-    </div>""", unsafe_allow_html=True)
+    st.markdown("#### TRANSITION TO ATTACK")
 
-# ═══════════════════════════════════════════════════
-# TAB 4 — SESSION DRILLS
-# ═══════════════════════════════════════════════════
-with tabs[3]:
-    st.markdown("<div style='font-family:Oswald,sans-serif;font-size:1.2em;color:#F5F5F5;letter-spacing:1px;margin:16px 0 8px;'>SESSION DRILL IMAGES</div>", unsafe_allow_html=True)
-    c1, c2 = st.columns(2)
-    with c1:
-        img = get_img("8v6_Runs_behind.png")
-        if img: st.image(img, caption="8v6 — Runs Behind. Attacking organisation in Zone 3 & 4. Timing runs to get in behind the defensive line.", use_container_width=True)
-        img = get_img("Counter_Attack_in_Final_third.png")
-        if img: st.image(img, caption="Counter Attack in Final Third. Transition to attack — arrive with numbers, attack before they set.", use_container_width=True)
-    with c2:
-        img = get_img("8v8_Pressing_Half_Field.png")
-        if img: st.image(img, caption="8v8 Pressing — Half Field. Defensive organisation and press triggers. Team pressing as a connected unit.", use_container_width=True)
-        img = get_img("Phase_of_Play_8v8_counter.png")
-        if img: st.image(img, caption="Phase of Play 8v8 — Counter. Defensive transition into immediate counter-attack. React first, attack second.", use_container_width=True)
+    img = get_img("Counter_Attack_in_Final_third.png")
 
-# ═══════════════════════════════════════════════════
-# TAB 5 — ENVIRONMENT DESIGN
-# ═══════════════════════════════════════════════════
-with tabs[4]:
-    st.markdown("<div style='font-family:Oswald,sans-serif;font-size:1.2em;color:#F5F5F5;letter-spacing:1px;margin:16px 0 8px;'>ENVIRONMENT DESIGN FRAMEWORK</div>", unsafe_allow_html=True)
-    st.markdown("<div class='quote-block'>Every training environment is a decision. The design determines what players experience and what they learn.</div>", unsafe_allow_html=True)
+    if img:
+        c1, c2 = st.columns([1.2, 1], gap="large")
 
-    for section, items, clr in [
-        ("EXPERIENCES — OBJECTIVES — LEARNING INTENTIONS",
-         ["What do we want players to experience?",
-          "Every session objective is taken directly from our game model and focuses on developing behaviours rather than isolated techniques.",
-          "Learning intentions describe what players should recognise, attempt, and improve — not simply what activity they complete."],
-         "#111"),
-        ("ORGANISATION — STRUCTURE — ACTIVITIES",
-         ["How is the session structured?",
-          "What activities achieve the objective?",
-          "What progressions are planned?"],
-         "#1E56D6"),
-    ]:
-        st.markdown(f"<div style='background:{clr};border:1px solid #1E56D6;border-radius:6px;padding:12px;margin:8px 0;'><b style='color:white;'>{section}</b></div>", unsafe_allow_html=True)
-        for item in items:
-            st.markdown(f"<div class='card'>→ {item}</div>", unsafe_allow_html=True)
+        with c1:
+            st.image(
+                img,
+                use_container_width=True
+            )
 
-    c1, c2 = st.columns(2)
-    with c1:
-        st.markdown("#### DESIGN")
-        for item, clr in [
-            ("Pitch — size, shape, zones","card-red"),
-            ("Parameters — rules, constraints","card-red"),
-            ("Players — numbers, roles, positions","card-red"),
-        ]:
-            st.markdown(f"<div class='{clr}'>{item}</div>", unsafe_allow_html=True)
-    with c2:
-        st.markdown("#### DEMANDS")
-        for item, clr in [
-            ("Reward — how do we score points?","card-green"),
-            ("Relate — how does it connect to the game?","card-green"),
-            ("Restrict — what constraints create the problem?","card-green"),
-        ]:
-            st.markdown(f"<div class='{clr}'>{item}</div>", unsafe_allow_html=True)
+        with c2:
+            st.markdown("#### COUNTER ATTACK — FINAL THIRD")
+
+            st.markdown(
+                "**Game Moment:** Transition to Attack."
+            )
+
+            st.markdown(
+                "Creating opportunities to attack "
+                "before the opposition can recover "
+                "its defensive organisation."
+            )
+
+            st.markdown("**Coaching Focus**")
+
+            st.markdown(
+                "Recognise the forward option, "
+                "support with immediate forward runs, "
+                "and attack available space with purpose."
+            )
+
+    st.divider()
+
+    st.markdown("#### DEFENSIVE ORGANISATION")
+
+    img = get_img("8v8_Pressing_Half_Field.png")
+
+    if img:
+        c1, c2 = st.columns([1.2, 1], gap="large")
+
+        with c1:
+            st.image(
+                img,
+                use_container_width=True
+            )
+
+        with c2:
+            st.markdown("#### 8v8 — HALF-FIELD PRESSING")
+
+            st.markdown(
+                "**Game Moment:** Defensive Organisation."
+            )
+
+            st.markdown(
+                "Developing the team's ability "
+                "to recognise pressing opportunities "
+                "and apply pressure as a connected unit."
+            )
+
+            st.markdown("**Coaching Focus**")
+
+            st.markdown(
+                "Recognise pressing triggers, "
+                "coordinate pressure and cover, "
+                "and maintain compactness behind "
+                "the players engaging the ball."
+            )
+
+    st.divider()
+
+    st.markdown("#### DEFENSIVE TRANSITION")
+
+    img = get_img("Phase_of_Play_8v8_counter.png")
+
+    if img:
+        c1, c2 = st.columns([1.2, 1], gap="large")
+
+        with c1:
+            st.image(
+                img,
+                use_container_width=True
+            )
+
+        with c2:
+            st.markdown("#### PHASE OF PLAY — 8v8 COUNTER")
+
+            st.markdown(
+                "**Game Moment:** Defensive Transition."
+            )
+
+            st.markdown(
+                "Challenging players to react immediately "
+                "when possession is lost and respond "
+                "to the developing attacking threat."
+            )
+
+            st.markdown("**Coaching Focus**")
+
+            st.markdown(
+                "Immediate reaction, pressure on the ball, "
+                "supporting cover and recognition "
+                "of when to counter-press or recover."
+            )
+
+    st.divider()
+
+    st.markdown("### REFLECTING ON THE SESSION")
+
+    st.markdown(
+        "After training, I consider whether the "
+        "practice created the intended problems "
+        "and whether the players demonstrated "
+        "improved recognition, decisions and execution. "
+        "Those observations help inform the next "
+        "session and the wider training cycle."
+    )
+
+    st.markdown(
+        "<div class='quote-block'>"
+        "The purpose of training is not to perfect "
+        "the exercise. It is to improve the player "
+        "and their understanding of the game."
+        "</div>",
+        unsafe_allow_html=True
+    )
