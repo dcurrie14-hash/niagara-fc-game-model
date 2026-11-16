@@ -150,10 +150,33 @@ for tab, (pos, profile) in zip(tabs, PROFILES.items()):
             cats = list(CAT_COLORS.keys())
             scores = profile["scores"]
 
+            
             for cat, score in zip(cats, scores):
-
                 clr = CAT_COLORS[cat]
                 bar_pct = int((score / 5) * 100)
+
+                bar_html = (
+                    f'<div style="display:flex;align-items:center;'
+                    f'gap:10px;margin:10px 0;">'
+                    f'<span style="color:{clr};font-weight:700;'
+                    f'font-size:0.82em;min-width:145px;">'
+                    f'{cat}</span>'
+                    f'<div style="flex:1;background:#1A2E4A;'
+                    f'border-radius:5px;height:9px;overflow:hidden;">'
+                    f'<div style="width:{bar_pct}%;background:{clr};'
+                    f'height:100%;border-radius:5px;"></div>'
+                    f'</div>'
+                    f'<span style="color:{clr};font-weight:700;'
+                    f'min-width:32px;text-align:right;">'
+                    f'{score:.1f}</span>'
+                    f'</div>'
+                )
+
+                st.markdown(
+                    bar_html,
+                    unsafe_allow_html=True
+                )
+
 
                 st.markdown(
                     f"""
