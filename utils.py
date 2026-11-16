@@ -483,9 +483,7 @@ FORMATIONS = {
                 "and create scoring opportunities. "
                 "Lead the press together and provide "
                 "forward outlets during attacking transitions."
-        }
-    }
-}
+            },
 
 
 PROFILES = {
