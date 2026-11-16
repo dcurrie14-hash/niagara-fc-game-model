@@ -36,6 +36,7 @@ def get_img(filename):
 
 # ── CSS ───────────────────────────────────────────────────────────────────────
 
+
 def apply_css():
     st.markdown("""
 <style>
@@ -58,36 +59,6 @@ html, body, [class*="css"] {
 
 .stApp {
     background-color: #060E18;
-}
-
-/* ==========================================
-   CONSISTENT HEADINGS
-   ========================================== */
-
-/* Main page titles */
-h1,
-[data-testid="stMain"] h1,
-[data-testid="stMarkdownContainer"] h1 {
-    font-family: 'Bebas Neue', sans-serif !important;
-    letter-spacing: 3px !important;
-    font-size: 2.6em !important;
-    font-weight: 400 !important;
-    color: #C1C7CE !important;
-}
-
-/* Section headings */
-h2, h3, h4, h5,
-[data-testid="stMain"] h2,
-[data-testid="stMain"] h3,
-[data-testid="stMain"] h4,
-[data-testid="stMain"] h5,
-[data-testid="stMarkdownContainer"] h2,
-[data-testid="stMarkdownContainer"] h3,
-[data-testid="stMarkdownContainer"] h4,
-[data-testid="stMarkdownContainer"] h5 {
-    font-family: 'Oswald', sans-serif !important;
-    letter-spacing: 1px !important;
-    color: #D0D5DA !important;
 }
 
 /* ==========================================
@@ -223,13 +194,65 @@ p, li, small {
     color: #F5F5F5;
 }
 
-/* Hide Streamlit header and footer */
+/* ==========================================
+   GLOBAL HEADING STANDARDS
+   ========================================== */
+
+/* Main page headings — muted silver-grey */
+
+h1,
+.stApp [data-testid="stMain"] h1,
+.stApp [data-testid="stMain"] h1 *,
+.stApp [data-testid="stMain"] [data-testid="stMarkdownContainer"] h1 {
+    font-family: 'Bebas Neue', sans-serif !important;
+    font-size: 2.6em !important;
+    font-weight: 400 !important;
+    letter-spacing: 3px !important;
+    color: #C1C7CE !important;
+}
+
+/* Section headings — soft silver-grey */
+
+h2, h3, h4, h5,
+.stApp [data-testid="stMain"] h2,
+.stApp [data-testid="stMain"] h3,
+.stApp [data-testid="stMain"] h4,
+.stApp [data-testid="stMain"] h5 {
+    font-family: 'Oswald', sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    color: #D0D5DA !important;
+}
+
+/* Ensure headings inside Markdown containers
+   follow the same standards */
+
+.stApp [data-testid="stMain"]
+[data-testid="stMarkdownContainer"] h2,
+
+.stApp [data-testid="stMain"]
+[data-testid="stMarkdownContainer"] h3,
+
+.stApp [data-testid="stMain"]
+[data-testid="stMarkdownContainer"] h4,
+
+.stApp [data-testid="stMain"]
+[data-testid="stMarkdownContainer"] h5 {
+    color: #D0D5DA !important;
+    font-family: 'Oswald', sans-serif !important;
+}
+
+/* ==========================================
+   HIDE STREAMLIT HEADER & FOOTER
+   ========================================== */
+
 footer, header {
     visibility: hidden;
 }
 
 </style>
 """, unsafe_allow_html=True)
+
 
 # ── SIDEBAR BRANDING ──────────────────────────────────────────────────────────
 def sidebar_brand():
