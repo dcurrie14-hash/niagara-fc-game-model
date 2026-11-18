@@ -216,7 +216,7 @@ with tabs[1]:
 
 with tabs[2]:
     st.markdown(
-        "**Team Intention:** Progress with tempo and purpose. "
+        "**Zones 2 & 3 Intention:** Progress with tempo and purpose. "
         "Break defensive lines, create superiority and recognise "
         "opportunities to penetrate Zone 4."
     )
@@ -332,7 +332,7 @@ with tabs[2]:
 
 with tabs[3]:
     st.markdown(
-        "**Team Intention:** Create and finish high-quality chances "
+        "**Zone 4 Intention:** Create and finish high-quality chances "
         "through penetration, coordinated attacking runs and "
         "effective occupation of the penalty area."
     )
@@ -441,7 +441,7 @@ with tabs[3]:
 
 with tabs[4]:
     st.markdown(
-        "**Team Intention:** Create immediate support around the "
+        "**Connections #9 Intention:** Create immediate support around the "
         "#9 to connect midfield with the attack, prevent isolation "
         "and threaten space beyond the defensive line."
     )
@@ -548,7 +548,7 @@ with tabs[4]:
 
 with tabs[5]:
     st.markdown(
-        "**Team Intention:** Create and exploit wide attacking "
+        "**Wide Play Intention:** Create and exploit wide attacking "
         "opportunities through isolation, combinations, "
         "penetration and effective delivery."
     )
