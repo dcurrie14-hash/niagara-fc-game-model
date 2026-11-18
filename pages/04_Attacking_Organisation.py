@@ -132,7 +132,7 @@ with tabs[0]:
 
 with tabs[1]:
     st.markdown(
-        "**Team Intention:** Attract and manipulate the first "
+        "**Zone 1 Intention:** Attract and manipulate the first "
         "line of pressure to progress through, around or beyond it."
     )
 
