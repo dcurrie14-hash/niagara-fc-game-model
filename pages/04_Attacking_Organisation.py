@@ -34,7 +34,7 @@ def coaching_cards(items, style="card"):
 st.markdown("# ATTACKING ORGANISATION")
 st.markdown(
     "<div style='font-family:Oswald,sans-serif;font-size:1em;"
-    "color:#1E56D6;letter-spacing:1px;margin-bottom:12px;'>"
+    "color:#4169E1;letter-spacing:1px;margin-bottom:12px;'>"
     "TEAM INTENTION: Control and progress the ball with tempo, "
     "purpose and positional flexibility. Create opportunities "
     "to penetrate and attack quickly.</div>",
@@ -42,12 +42,12 @@ st.markdown(
 )
 
 tabs = st.tabs([
-    "📋 Overview",
-    "🔵 Zone 1 — Build",
-    "🔄 Zone 2, 3 & Into 4",
-    "🎯 Zone 4 — Finish",
-    "🔗 Connections #9",
-    "↔️ Wide Play"
+    "Overview",
+    "Zone 1 — Build",
+    "Zones 2 & 3 into 4",
+    "Zone 4 — Finish",
+    "Connections #9",
+    "Wide Play"
 ])
 
 
@@ -58,7 +58,7 @@ tabs = st.tabs([
 with tabs[0]:
     st.markdown(
         "<div style='font-family:Oswald,sans-serif;font-size:0.95em;"
-        "color:#FFD700;letter-spacing:1px;margin-bottom:12px;'>"
+        "color:#F5C518;letter-spacing:1px;margin-bottom:12px;'>"
         "STRATEGY: Play forward whenever possible. Break lines "
         "quickly. Attack space before the opposition can "
         "recover organisation.</div>",
@@ -272,7 +272,7 @@ with tabs[2]:
         ], "card-gold")
 
     st.divider()
-    st.markdown("### REAL GAME REFERENCES — ZONE 2, 3 & INTO 4")
+    st.markdown("### REAL GAME REFERENCES — ZONES 2 & 3 INTO 4")
 
     c1, c2 = st.columns(2)
 
@@ -428,10 +428,10 @@ with tabs[3]:
     # against their original source before being presented
     # as established findings.
     show_diagram(
-    "ao_zone4_finishing_insights.png",
+        "ao_zone4_finishing_insights.png",
         "Women's World Cup 2023 — finishing locations, "
-"the second six-yard box and goals assisted by crosses. "
-"Source: England Football Learning."
+        "the second six-yard box and goals assisted by crosses. "
+        "Source: England Football Learning."
     )
 
 
@@ -555,7 +555,6 @@ with tabs[5]:
 
     st.markdown(
         "<div class='quote-block'>"
-        "ISOLATE · COMBINE · PENETRATE · DELIVER. "
         "Width stretches the opposition and creates space. "
         "Recognise when to attack the defender, combine "
         "with support or deliver into the penalty area."
