@@ -23,17 +23,32 @@ st.markdown("# DEFENSIVE ORGANISATION")
 st.markdown(
     "<div style='font-family:Oswald,sans-serif;font-size:1em;"
     "color:#E53935;letter-spacing:1px;margin-bottom:12px;'>"
-    "TEAM INTENTION: Remain compact and connected while denying "
-    "central penetration and forcing play into predictable wide areas."
+    "OVERALL TEAM INTENTION: Remain compact and connected. Deny "
+    "central penetration, influence opposition play and recognise "
+    "opportunities to regain possession."
     "</div>",
     unsafe_allow_html=True
 )
 
+
+def tab_intention(intention, strategy):
+    """Consistent red intention / gold strategy hierarchy for each tab."""
+    st.markdown(
+        f"<div style='font-family:Oswald,sans-serif;font-size:0.95em;"
+        f"color:#E53935;letter-spacing:0.6px;margin:10px 0 8px;'>"
+        f"{intention}</div>", unsafe_allow_html=True
+    )
+    st.markdown(
+        f"<div style='font-family:Oswald,sans-serif;font-size:0.95em;"
+        f"color:#F5C518;letter-spacing:0.6px;margin-bottom:16px;'>"
+        f"{strategy}</div>", unsafe_allow_html=True
+    )
+
 tabs = st.tabs([
-    "📋 Principles",
-    "🛡️ Compact Block",
-    "🔴 Press & Block Systems",
-    "⚡ Pressing Triggers"
+    "Principles",
+    "Compact Block",
+    "Press & Block Systems",
+    "Pressing Triggers"
 ])
 
 
@@ -43,13 +58,11 @@ tabs = st.tabs([
 
 with tabs[0]:
 
-    st.markdown(
-        "<div style='font-family:Oswald,sans-serif;font-size:0.95em;"
-        "color:#FFD700;letter-spacing:1px;margin-bottom:12px;'>"
-        "STRATEGY: Protect the middle. Force play wide. "
-        "Create regains in predictable areas."
-        "</div>",
-        unsafe_allow_html=True
+    tab_intention(
+        "PRINCIPLES INTENTION: Protect central spaces, maintain defensive "
+        "balance and collectively limit opposition attacking options.",
+        "STRATEGY: Deny the middle. Direct play wide. Delay when needed. "
+        "Recognise opportunities to regain possession."
     )
 
     c1, c2 = st.columns(2)
@@ -102,7 +115,7 @@ with tabs[0]:
             "Maintain compact distances to the midfield",
         ]:
             st.markdown(
-                f"<div class='card card-red'>🛡️ {item}</div>",
+                f"<div class='card card-red'>{item}</div>",
                 unsafe_allow_html=True
             )
 
@@ -142,7 +155,7 @@ with tabs[0]:
     with c1:
         st.markdown(
             "<div class='card card-red'>"
-            "<b>🔴 HIGH PRESS</b><br>"
+            "<b>HIGH PRESS</b><br>"
             "<small>Shape: 4-2-4<br><br>"
             "The #9 and #10 engage the opposition centre backs "
             "while #7 and #11 lock onto the fullbacks. "
@@ -156,7 +169,7 @@ with tabs[0]:
     with c2:
         st.markdown(
             "<div class='card card-gold'>"
-            "<b>🟡 MID-BLOCK</b><br>"
+            "<b>MID-BLOCK</b><br>"
             "<small>Shape: 4-1-4-1<br><br>"
             "Our default defensive structure. Stay compact "
             "and connected, protect central spaces and shift "
@@ -169,7 +182,7 @@ with tabs[0]:
     with c3:
         st.markdown(
             "<div class='card card-blue'>"
-            "<b>🔵 LOW BLOCK</b><br>"
+            "<b>LOW BLOCK</b><br>"
             "<small>Shape: 4-5-1<br><br>"
             "Protect space closer to our goal. Maintain compact "
             "distances, defend the penalty area and remain "
@@ -184,6 +197,15 @@ with tabs[0]:
 # ==================================================
 
 with tabs[1]:
+
+    tab_intention(
+        "COMPACT BLOCK INTENTION: Remain compact vertically and horizontally, "
+        "protect the middle and force play into predictable wide areas.",
+        "STRATEGY: Protect the middle. Stay connected. Shift together. "
+
+        
+        "Press when the opportunity is there."
+    )
 
     st.markdown(
         "<div class='quote-block'>"
@@ -301,12 +323,18 @@ with tabs[1]:
             )
 
 
-
 # ==================================================
 # TAB 3 — PRESS & BLOCK SYSTEMS
 # ==================================================
 
 with tabs[2]:
+
+    tab_intention(
+        "PRESS & BLOCK SYSTEMS INTENTION: Coordinate pressure, cover and "
+        "balance to disrupt opposition build-up and create regains.",
+        "STRATEGY: Match pressure to the game situation. Screen passing "
+        "options, direct play and move together behind the press."
+    )
 
     st.markdown(
         "<div class='quote-block'>"
@@ -353,7 +381,7 @@ with tabs[2]:
 
         press_types = [
             (
-                "🔴 HIGH PRESS",
+                "HIGH PRESS",
                 "Shape: 4-2-4",
                 "Player-oriented pressure. The front four match "
                 "the opposition back four, #6 and #8 control "
@@ -361,14 +389,14 @@ with tabs[2]:
                 "to deny the goalkeeper return and trap play wide."
             ),
             (
-                "🟡 MID-BLOCK",
+                "MID-BLOCK",
                 "Shape: 4-1-4-1",
                 "Our default defensive shape. Protect the middle, "
                 "stay connected and shift collectively. "
                 "Apply pressure on recognised triggers."
             ),
             (
-                "🔵 LOW BLOCK",
+                "LOW BLOCK",
                 "Shape: 4-5-1",
                 "Protect space closer to goal. Remain compact, "
                 "defend the box and prepare to counter on regain."
@@ -380,6 +408,8 @@ with tabs[2]:
                 f"<div class='card'>"
                 f"<b>{block}</b> "
                 f"<span style='color:#888;font-size:0.8em;'>"
+
+                
                 f"— {shape}</span><br>"
                 f"<small>{detail}</small>"
                 f"</div>",
@@ -472,19 +502,25 @@ with tabs[2]:
             )
 
 
-
 # ==================================================
 # TAB 4 — PRESSING TRIGGERS
 # ==================================================
 
 with tabs[3]:
 
+    tab_intention(
+        "PRESSING TRIGGERS INTENTION: Recognise opposition vulnerability "
+        "and react collectively to restrict options and regain possession.",
+        "STRATEGY: Recognise the cue. Press at the right angle. "
+        "Close nearby options. Protect the space behind the press."
+    )
+
     st.markdown("### PRESSING TRIGGERS")
 
     st.markdown(
         "<div class='quote-block'>"
         "Every player must recognise pressing triggers immediately. "
-        "When a trigger appears, the nearest player applies pressure "
+        "When a trigger appears, the player best positioned applies pressure "
         "and teammates react together. We close passing options, "
         "protect central spaces and make the opposition's next "
         "action predictable."
@@ -502,7 +538,7 @@ with tabs[3]:
             "Wide player receiving while facing their own goal",
         ]:
             st.markdown(
-                f"<div class='card card-red'>🔴 {trigger}</div>",
+                f"<div class='card card-red'>{trigger}</div>",
                 unsafe_allow_html=True
             )
 
@@ -514,9 +550,16 @@ with tabs[3]:
             "Isolated player — no immediate support options",
         ]:
             st.markdown(
-                f"<div class='card card-red'>🔴 {trigger}</div>",
+                f"<div class='card card-red'>{trigger}</div>",
                 unsafe_allow_html=True
             )
+
+    st.markdown("### PRESSING TRIGGER — COLLECTIVE RESPONSE")
+    img = get_img("pressing_triggers.png")
+    if img:
+        st.image(img, use_container_width=True)
+    else:
+        st.warning("Image not found: pressing_triggers.png")
 
     st.divider()
     st.markdown("### TRANSITION INTO DEFENCE")
