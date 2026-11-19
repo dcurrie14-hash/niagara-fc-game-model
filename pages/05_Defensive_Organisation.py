@@ -202,8 +202,6 @@ with tabs[1]:
         "COMPACT BLOCK INTENTION: Remain compact vertically and horizontally, "
         "protect the middle and force play into predictable wide areas.",
         "STRATEGY: Protect the middle. Stay connected. Shift together. "
-
-        
         "Press when the opportunity is there."
     )
 
@@ -388,6 +386,8 @@ with tabs[2]:
                 "midfield opponents, and the #9 curves the press "
                 "to deny the goalkeeper return and trap play wide."
             ),
+
+
             (
                 "MID-BLOCK",
                 "Shape: 4-1-4-1",
@@ -408,8 +408,6 @@ with tabs[2]:
                 f"<div class='card'>"
                 f"<b>{block}</b> "
                 f"<span style='color:#888;font-size:0.8em;'>"
-
-                
                 f"— {shape}</span><br>"
                 f"<small>{detail}</small>"
                 f"</div>",
@@ -555,51 +553,12 @@ with tabs[3]:
             )
 
     st.markdown("### PRESSING TRIGGER — COLLECTIVE RESPONSE")
+
     img = get_img("pressing_triggers.png")
     if img:
         st.image(img, use_container_width=True)
     else:
         st.warning("Image not found: pressing_triggers.png")
-
-    st.divider()
-    st.markdown("### TRANSITION INTO DEFENCE")
-
-    st.markdown(
-        "<div class='quote-block'>"
-        "When we lose possession, our first action is to react "
-        "immediately and attempt to regain the ball. "
-        "If we cannot win it back, we recover into a compact "
-        "defensive shape. Players must communicate, protect "
-        "central spaces and recognise when to press or recover."
-        "</div>",
-        unsafe_allow_html=True
-    )
-
-    c1, c2 = st.columns(2)
-
-    with c1:
-        for item in [
-            "Win it back on the first action — if not, recover into shape",
-            "Nearest player applies immediate pressure",
-            "Supporting players protect central passing options",
-            "If #6 steps out — a teammate covers the central space",
-        ]:
-            st.markdown(
-                f"<div class='card card-red'>{item}</div>",
-                unsafe_allow_html=True
-            )
-
-    with c2:
-        for item in [
-            "If the press is broken — recover quickly into compact shape",
-            "Communicate immediately and organise the players around the ball",
-            "The back line adjusts its height according to pressure on the ball",
-            "Compete aggressively for first contacts and second balls",
-        ]:
-            st.markdown(
-                f"<div class='card'>{item}</div>",
-                unsafe_allow_html=True
-            )
 
     st.divider()
 
